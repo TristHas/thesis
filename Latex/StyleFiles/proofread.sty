@@ -1,0 +1,64 @@
+\newif\if@noproofreadmark \@noproofreadmarkfalse
+\def\noproofreadmark{\@noproofreadmarktrue}
+
+\def\addspan#1{%
+ \if@noproofreadmark%
+   #1%
+ \else%
+  \textcolor{red}{#1}%
+ \fi%
+}
+
+\def\delspan#1{%
+ \if@noproofreadmark%
+  \empty%
+ \else%
+  {\setjumocolor{red}\Midline{#1}}%
+ \fi%
+}
+
+\def\delspanx#1{%
+ \if@noproofreadmark%
+  \empty%
+ \else%
+  #1%
+ \fi%
+}
+
+\def\strikemath#1{%
+ \if@noproofreadmark%
+   \empty%
+ \else%
+   {\setjumocolor{red}\Midline{{\mbox{$\displaystyle #1$}}}}%
+ \fi%
+}
+\def\addspanB#1{%
+ \if@noproofreadmark%
+   #1%
+ \else%
+  \textcolor{blue}{#1}%
+ \fi%
+}
+
+\def\delspanB#1{%
+ \if@noproofreadmark%
+  \empty%
+ \else%
+  {\setjumocolor{blue}\Midline{#1}}%
+ \fi%
+}
+\def\addspanM#1{%
+ \if@noproofreadmark%
+   #1%
+ \else%
+  \textcolor{magenta}{#1}%
+ \fi%
+}
+
+\def\delspanM#1{%
+ \if@noproofreadmark%
+  \empty%
+ \else%
+  {\setjumocolor{magenta}\Midline{#1}}%
+ \fi%
+}

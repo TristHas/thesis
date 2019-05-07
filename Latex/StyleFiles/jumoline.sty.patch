@@ -1,0 +1,37 @@
+--- jumoline.sty.orig	Fri Jun 18 21:08:34 2004
++++ jumoline.sty	Mon Jan 31 00:20:16 2005
+@@ -84,6 +84,9 @@
+ 
+ \newif\ifUMO@nospace \newif\ifUMO@firstelem
+ 
++\def\@jumocolor{black}
++\def\setjumocolor#1{\edef\@jumocolor{#1}}
++
+ %%^L
+ 
+ %% User Interface and Initialization
+@@ -256,12 +259,12 @@
+ 
+ \def\UMO@putbox#1#2{\setbox\@tempboxa\hbox{#1#2#1}\@tempdima\wd\@tempboxa
+         \ifUMO@firstelem\else
+-        \rlap{\vrule\@height\UMO@height\@depth\UMO@depth\@width\@tempdima}\fi
++        \rlap{\textcolor{\@jumocolor}{\vrule\@height\UMO@height\@depth\UMO@depth\@width\@tempdima}}\fi
+         \box\@tempboxa
+         \ifUMO@firstelem \UMO@firstelemfalse
+-        \llap{\vrule\@height\UMO@height\@depth\UMO@depth\@width\@tempdima}\fi}
++        \llap{\textcolor{\@jumocolor}{\vrule\@height\UMO@height\@depth\UMO@depth\@width\@tempdima}}\fi}
+ \def\UMO@skip#1{%
+-        \leaders\hrule\@height\UMO@height\@depth\UMO@depth\hskip#1\relax}
++        \textcolor{\@jumocolor}{\leaders\hrule\@height\UMO@height\@depth\UMO@depth\hskip#1\relax}}
+ 
+ %%^L
+ 
+@@ -269,7 +272,7 @@
+ 
+ \def\UMO@space{\UMO@mode\UMO@afterblock
+         \@ifstar\UMO@sspace\UMO@ispace}
+-\def\UMO@sspace#1{\vrule width\z@\nobreak\UMO@skip{#1}\UMO@charloop}
++\def\UMO@sspace#1{\textcolor{\@jumocolor}{\vrule width\z@\nobreak\UMO@skip{#1}\UMO@charloop}}
+ \def\UMO@ispace#1{\@tempskipa#1\relax
+         \@ifstar{\@tempswafalse\UMO@iispace}{\@tempswatrue\UMO@iispace}}
+ \def\UMO@iispace{\@ifnextchar[%]

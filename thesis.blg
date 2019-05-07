@@ -1,0 +1,65 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: frontmatter/abstract.aux
+A level-1 auxiliary file: frontmatter/declaration.aux
+A level-1 auxiliary file: frontmatter/publications.aux
+A level-1 auxiliary file: frontmatter/glossary.aux
+A level-1 auxiliary file: Intro/introduction.aux
+A level-1 auxiliary file: Acoustic/Acoustic.aux
+A level-1 auxiliary file: NMF/NMF.aux
+A level-1 auxiliary file: Noise/Noise.aux
+A level-1 auxiliary file: AD/AD.aux
+A level-1 auxiliary file: Affine/AffineNMF.aux
+A level-1 auxiliary file: M2M/M2M.aux
+A level-1 auxiliary file: Conc/Conclusions.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: backmatter/appendix.aux
+A level-1 auxiliary file: frontmatter/acknowledgement.aux
+A level-1 auxiliary file: backmatter/citation.aux
+Database file #1: backmatter/thesis.bib
+Warning--there's a number but no volume in Hoyer04
+Warning--there's a number but no volume in Virtanen14
+You've used 103 entries,
+            1791 wiz_defined-function locations,
+            1054 strings with 21665 characters,
+and the built_in function-call counts, 27912 in all, are:
+= -- 2590
+> -- 1225
+< -- 41
++ -- 446
+- -- 343
+* -- 1778
+:= -- 4221
+add.period$ -- 309
+call.type$ -- 103
+change.case$ -- 101
+chr.to.int$ -- 0
+cite$ -- 105
+duplicate$ -- 1300
+empty$ -- 2462
+format.name$ -- 343
+if$ -- 6432
+int.to.chr$ -- 0
+int.to.str$ -- 103
+missing$ -- 105
+newline$ -- 518
+num.names$ -- 103
+pop$ -- 245
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 860
+stack$ -- 0
+substring$ -- 2167
+swap$ -- 501
+text.length$ -- 41
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 249
+width$ -- 106
+write$ -- 1112
+is.kanji.str$ -- 0
+(There were 2 warnings)
