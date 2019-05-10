@@ -1,30 +1,86 @@
-\select@language {english}
-\contentsline {chapter}{List of Figures}{v}{chapter*.2}
-\contentsline {chapter}{List of Tables}{vii}{chapter*.3}
-\contentsline {chapter}{Publication List}{ix}{chapter*.4}
-\contentsline {chapter}{Glossary}{xvii}{chapter*.10}
+\babel@toc {english}{}
+\contentsline {chapter}{List of Figures}{vii}{chapter*.2}
+\contentsline {chapter}{List of Tables}{ix}{chapter*.3}
+\contentsline {chapter}{Publication List}{xi}{chapter*.4}
+\contentsline {chapter}{Glossary}{xiii}{chapter*.8}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Approaches}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Purpose of This Thesis}{1}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Four Practical VC Tasks}{1}{subsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.1.1}Noise-robust VC}{1}{subsubsection.1.3.1.1}
-\contentsline {subsubsection}{\numberline {1.3.1.2}Assistive Technology for Articulation Disorders}{1}{subsubsection.1.3.1.2}
-\contentsline {subsubsection}{\numberline {1.3.1.3}VC Using Small-parallel Training Data}{1}{subsubsection.1.3.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1.4}Many-to-many VC}{1}{subsubsection.1.3.1.4}
-\contentsline {subsection}{\numberline {1.3.2}Novelties of This Thesis}{1}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.1}Novelties of This Thesis}{1}{subsection.1.3.1}
 \contentsline {section}{\numberline {1.4}Outline}{1}{section.1.4}
-\contentsline {chapter}{\numberline {2}Visual Feature Extraction}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}The Motivation and Related Work}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Motivation}{3}{subsection.2.1.1}
-\contentsline {chapter}{\numberline {3}Visual Feature Extraction}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}The Motivation and Related Work}{5}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Motivation}{5}{subsection.3.1.1}
-\contentsline {chapter}{\numberline {4}Visual Feature Extraction}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}The Motivation and Related Work}{7}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Motivation}{7}{subsection.4.1.1}
-\contentsline {chapter}{\numberline {5}Conclusions}{9}{chapter.5}
-\contentsline {chapter}{References}{11}{chapter*.11}
-\contentsline {chapter}{Appendix}{21}{chapter*.12}
-\contentsline {chapter}{Acknowledgements}{23}{chapter*.15}
-\contentsline {chapter}{BibTeX Citation for This Thesis }{25}{chapter*.16}
+\contentsline {chapter}{\numberline {2}Redefining Generic object ZSL}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Related Work}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}ZSL datasets}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Dataset bias}{5}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Preliminaries}{6}{section.2.3}
+\contentsline {section}{\numberline {2.4}Error analysis}{7}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Structural flaws}{8}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Word embeddings}{9}{subsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.2.1}Occurrence frequency}{10}{subsubsection.2.4.2.1}
+\contentsline {subsubsection}{\numberline {2.4.2.2}Polysemy}{11}{subsubsection.2.4.2.2}
+\contentsline {subsection}{\numberline {2.4.3}Image samples}{12}{subsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.3.1}Class-wise selection}{12}{subsubsection.2.4.3.1}
+\contentsline {subsubsection}{\numberline {2.4.3.2}Sample-wise selection}{13}{subsubsection.2.4.3.2}
+\contentsline {subsection}{\numberline {2.4.4}Dataset Summary}{14}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Structural bias}{14}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Toy example}{15}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Standard benchmark}{17}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Measuring structural bias}{17}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}New Benchmark}{20}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Proposed Benchmark}{20}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Evaluation}{21}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}Conclusion and Discussion}{22}{section.2.7}
+\contentsline {chapter}{\numberline {3}Visual Feature Extraction}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2}Related Work}{26}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Reversibility}{26}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Resource efficiency}{27}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Preliminaries}{28}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Backpropagation \& Notations}{29}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Memory footprint}{30}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Vanilla ResNet}{31}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}RevNet}{32}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}iRevNet}{34}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Method}{35}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Layer-wise Invertibility}{36}{subsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.1.1}Invertible batch normalization}{36}{subsubsection.3.4.1.1}
+\contentsline {subsubsection}{\numberline {3.4.1.2}Invertible activation function}{40}{subsubsection.3.4.1.2}
+\contentsline {subsubsection}{\numberline {3.4.1.3}Invertible convolutions}{43}{subsubsection.3.4.1.3}
+\contentsline {subsubsection}{\numberline {3.4.1.4}Pooling}{43}{subsubsection.3.4.1.4}
+\contentsline {subsubsection}{\numberline {3.4.1.5}Layer-wise invertible architecture}{44}{subsubsection.3.4.1.5}
+\contentsline {subsection}{\numberline {3.4.2}Hybrid architecture}{45}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Experiments and results}{46}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Impact of Numerical stability}{46}{subsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.1.1}Layer-wise Invertible Architecture}{46}{subsubsection.3.5.1.1}
+\contentsline {subsubsection}{\numberline {3.5.1.2}Hybrid Invertible Architecture}{47}{subsubsection.3.5.1.2}
+\contentsline {subsection}{\numberline {3.5.2}Model comparison}{48}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Conclusion}{49}{section.3.6}
+\contentsline {chapter}{\numberline {4}Semantic Feature Extraction}{51}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{51}{section.4.1}
+\contentsline {section}{\numberline {4.2}Related Work}{54}{section.4.2}
+\contentsline {section}{\numberline {4.3}Method}{55}{section.4.3}
+\contentsline {section}{\numberline {4.4}Word Embeddings}{56}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Overview}{56}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Relevance}{57}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Limitations}{58}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Data Augmentation}{60}{section.4.5}
+\contentsline {section}{\numberline {4.6}Graph Embeddings}{61}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Knowledge graph embeddings}{61}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Hyperbolic taxonomy embedding}{63}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Document Embeddings}{63}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1} Sentence level embedding}{63}{subsection.4.7.1}
+\contentsline {subsubsection}{\numberline {4.7.1.1} Architectures}{64}{subsubsection.4.7.1.1}
+\contentsline {subsubsection}{\numberline {4.7.1.2}Training signals}{64}{subsubsection.4.7.1.2}
+\contentsline {subsection}{\numberline {4.7.2}Full document embedding}{66}{subsection.4.7.2}
+\contentsline {section}{\numberline {4.8}Experiments \& Results}{66}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Methodology}{66}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2} Word embedding limitations }{67}{subsection.4.8.2}
+\contentsline {subsection}{\numberline {4.8.3}Standard evaluation}{68}{subsection.4.8.3}
+\contentsline {section}{\numberline {4.9}Conclusion \& Discussion}{70}{section.4.9}
+\contentsline {chapter}{\numberline {5}Conclusions}{73}{chapter.5}
+\contentsline {chapter}{References}{75}{chapter*.26}
+\contentsline {chapter}{Appendix}{83}{chapter*.27}
+\contentsline {chapter}{Acknowledgements}{85}{chapter*.30}
+\contentsline {chapter}{BibTeX Citation for This Thesis }{87}{chapter*.31}

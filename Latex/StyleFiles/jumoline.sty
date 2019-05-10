@@ -92,8 +92,8 @@
 %% User Interface and Initialization
 
 \def\Underline{\UMO@line\UnderlineDepth{-\UnderlineDepth}{-\dp\strutbox}}
-\def\Midline{\setbox\@tempboxa\hbox{あ}%
-        \UMO@line\MidlineHeight\MidlineHeight{.5\ht\@tempboxa}}
+%\def\Midline{\setbox\@tempboxa\hbox{あ}%
+%        \UMO@line\MidlineHeight\MidlineHeight{.5\ht\@tempboxa}}
 \def\Overline{\UMO@line\OverlineHeight\OverlineHeight{\ht\strutbox}}
 \def\UMOline{\UMO@line{-\maxdimen}\z@}
 
@@ -103,7 +103,7 @@
         \UMO@depth-\UMO@height
         \ifdim\UMO@height<\z@ \advance\UMO@depth\UMOlineThickness
         \else                 \advance\UMO@height\UMOlineThickness \fi
-        \settowidth\UMO@dqspace{“}\advance\UMO@dqspace-1zw
+        %\settowidth\UMO@dqspace{“}\advance\UMO@dqspace-1zw
         \UMO@dqspace-\UMO@dqspace \divide\UMO@dqspace\tw@
         \UMO@nospacetrue \UMO@firstelemtrue
         \UMO@mode\UMO@afterblock
@@ -241,9 +241,9 @@
 \@tempskipa\z@
 \edef\UMO@zskip{\the\@tempskipa}
 \def\UMO@setjfmglue#1{%
-        \settowidth\@tempdima{あ#1}\settowidth\@tempdimb{あ\inhibitglue#1}%
+        %\settowidth\@tempdima{あ#1}\settowidth\@tempdimb{あ\inhibitglue#1}%
         \advance\@tempdima-\@tempdimb
-        \settowidth\UMO@tempdim{#1あ}\settowidth\@tempdimb{#1\inhibitglue あ}%
+        %\settowidth\UMO@tempdim{#1あ}\settowidth\@tempdimb{#1\inhibitglue あ}%
         \advance\UMO@tempdim-\@tempdimb
         \ifdim\@tempdima>\z@
                 \ifdim\UMO@tempdim>\z@

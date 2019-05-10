@@ -1,29 +1,85 @@
 \BOOKMARK [0][]{chapter*.2}{List of Figures}{}% 1
 \BOOKMARK [0][]{chapter*.3}{List of Tables}{}% 2
 \BOOKMARK [0][]{chapter*.4}{Publication List}{}% 3
-\BOOKMARK [0][]{chapter*.10}{Glossary}{}% 4
+\BOOKMARK [0][]{chapter*.8}{Glossary}{}% 4
 \BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 5
 \BOOKMARK [1][]{section.1.1}{1.1 Background}{chapter.1}% 6
 \BOOKMARK [1][]{section.1.2}{1.2 Approaches}{chapter.1}% 7
 \BOOKMARK [1][]{section.1.3}{1.3 Purpose of This Thesis}{chapter.1}% 8
-\BOOKMARK [2][]{subsection.1.3.1}{1.3.1 Four Practical VC Tasks}{section.1.3}% 9
-\BOOKMARK [3][]{subsubsection.1.3.1.1}{1.3.1.1 Noise-robust VC}{subsection.1.3.1}% 10
-\BOOKMARK [3][]{subsubsection.1.3.1.2}{1.3.1.2 Assistive Technology for Articulation Disorders}{subsection.1.3.1}% 11
-\BOOKMARK [3][]{subsubsection.1.3.1.3}{1.3.1.3 VC Using Small-parallel Training Data}{subsection.1.3.1}% 12
-\BOOKMARK [3][]{subsubsection.1.3.1.4}{1.3.1.4 Many-to-many VC}{subsection.1.3.1}% 13
-\BOOKMARK [2][]{subsection.1.3.2}{1.3.2 Novelties of This Thesis}{section.1.3}% 14
-\BOOKMARK [1][]{section.1.4}{1.4 Outline}{chapter.1}% 15
-\BOOKMARK [0][]{chapter.2}{2 Visual Feature Extraction}{}% 16
-\BOOKMARK [1][]{section.2.1}{2.1 The Motivation and Related Work}{chapter.2}% 17
-\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Motivation}{section.2.1}% 18
-\BOOKMARK [0][]{chapter.3}{3 Visual Feature Extraction}{}% 19
-\BOOKMARK [1][]{section.3.1}{3.1 The Motivation and Related Work}{chapter.3}% 20
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Motivation}{section.3.1}% 21
-\BOOKMARK [0][]{chapter.4}{4 Visual Feature Extraction}{}% 22
-\BOOKMARK [1][]{section.4.1}{4.1 The Motivation and Related Work}{chapter.4}% 23
-\BOOKMARK [2][]{subsection.4.1.1}{4.1.1 Motivation}{section.4.1}% 24
-\BOOKMARK [0][]{chapter.5}{5 Conclusions}{}% 25
-\BOOKMARK [0][]{chapter*.11}{References}{}% 26
-\BOOKMARK [0][]{chapter*.12}{Appendix}{}% 27
-\BOOKMARK [0][]{chapter*.15}{Acknowledgements}{}% 28
-\BOOKMARK [0][]{chapter*.16}{BibTeX Citation for This Thesis }{}% 29
+\BOOKMARK [2][]{subsection.1.3.1}{1.3.1 Novelties of This Thesis}{section.1.3}% 9
+\BOOKMARK [1][]{section.1.4}{1.4 Outline}{chapter.1}% 10
+\BOOKMARK [0][]{chapter.2}{2 Redefining Generic object ZSL}{}% 11
+\BOOKMARK [1][]{section.2.1}{2.1 Introduction}{chapter.2}% 12
+\BOOKMARK [1][]{section.2.2}{2.2 Related Work}{chapter.2}% 13
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 ZSL datasets}{section.2.2}% 14
+\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 Dataset bias}{section.2.2}% 15
+\BOOKMARK [1][]{section.2.3}{2.3 Preliminaries}{chapter.2}% 16
+\BOOKMARK [1][]{section.2.4}{2.4 Error analysis}{chapter.2}% 17
+\BOOKMARK [2][]{subsection.2.4.1}{2.4.1 Structural flaws}{section.2.4}% 18
+\BOOKMARK [2][]{subsection.2.4.2}{2.4.2 Word embeddings}{section.2.4}% 19
+\BOOKMARK [3][]{subsubsection.2.4.2.1}{2.4.2.1 Occurrence frequency}{subsection.2.4.2}% 20
+\BOOKMARK [3][]{subsubsection.2.4.2.2}{2.4.2.2 Polysemy}{subsection.2.4.2}% 21
+\BOOKMARK [2][]{subsection.2.4.3}{2.4.3 Image samples}{section.2.4}% 22
+\BOOKMARK [3][]{subsubsection.2.4.3.1}{2.4.3.1 Class-wise selection}{subsection.2.4.3}% 23
+\BOOKMARK [3][]{subsubsection.2.4.3.2}{2.4.3.2 Sample-wise selection}{subsection.2.4.3}% 24
+\BOOKMARK [2][]{subsection.2.4.4}{2.4.4 Dataset Summary}{section.2.4}% 25
+\BOOKMARK [1][]{section.2.5}{2.5 Structural bias}{chapter.2}% 26
+\BOOKMARK [2][]{subsection.2.5.1}{2.5.1 Toy example}{section.2.5}% 27
+\BOOKMARK [2][]{subsection.2.5.2}{2.5.2 Standard benchmark}{section.2.5}% 28
+\BOOKMARK [2][]{subsection.2.5.3}{2.5.3 Measuring structural bias}{section.2.5}% 29
+\BOOKMARK [1][]{section.2.6}{2.6 New Benchmark}{chapter.2}% 30
+\BOOKMARK [2][]{subsection.2.6.1}{2.6.1 Proposed Benchmark}{section.2.6}% 31
+\BOOKMARK [2][]{subsection.2.6.2}{2.6.2 Evaluation}{section.2.6}% 32
+\BOOKMARK [1][]{section.2.7}{2.7 Conclusion and Discussion}{chapter.2}% 33
+\BOOKMARK [0][]{chapter.3}{3 Visual Feature Extraction}{}% 34
+\BOOKMARK [1][]{section.3.1}{3.1 Introduction}{chapter.3}% 35
+\BOOKMARK [1][]{section.3.2}{3.2 Related Work}{chapter.3}% 36
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Reversibility}{section.3.2}% 37
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Resource efficiency}{section.3.2}% 38
+\BOOKMARK [1][]{section.3.3}{3.3 Preliminaries}{chapter.3}% 39
+\BOOKMARK [2][]{subsection.3.3.1}{3.3.1 Backpropagation \046 Notations}{section.3.3}% 40
+\BOOKMARK [2][]{subsection.3.3.2}{3.3.2 Memory footprint}{section.3.3}% 41
+\BOOKMARK [2][]{subsection.3.3.3}{3.3.3 Vanilla ResNet}{section.3.3}% 42
+\BOOKMARK [2][]{subsection.3.3.4}{3.3.4 RevNet}{section.3.3}% 43
+\BOOKMARK [2][]{subsection.3.3.5}{3.3.5 iRevNet}{section.3.3}% 44
+\BOOKMARK [1][]{section.3.4}{3.4 Method}{chapter.3}% 45
+\BOOKMARK [2][]{subsection.3.4.1}{3.4.1 Layer-wise Invertibility}{section.3.4}% 46
+\BOOKMARK [3][]{subsubsection.3.4.1.1}{3.4.1.1 Invertible batch normalization}{subsection.3.4.1}% 47
+\BOOKMARK [3][]{subsubsection.3.4.1.2}{3.4.1.2 Invertible activation function}{subsection.3.4.1}% 48
+\BOOKMARK [3][]{subsubsection.3.4.1.3}{3.4.1.3 Invertible convolutions}{subsection.3.4.1}% 49
+\BOOKMARK [3][]{subsubsection.3.4.1.4}{3.4.1.4 Pooling}{subsection.3.4.1}% 50
+\BOOKMARK [3][]{subsubsection.3.4.1.5}{3.4.1.5 Layer-wise invertible architecture}{subsection.3.4.1}% 51
+\BOOKMARK [2][]{subsection.3.4.2}{3.4.2 Hybrid architecture}{section.3.4}% 52
+\BOOKMARK [1][]{section.3.5}{3.5 Experiments and results}{chapter.3}% 53
+\BOOKMARK [2][]{subsection.3.5.1}{3.5.1 Impact of Numerical stability}{section.3.5}% 54
+\BOOKMARK [3][]{subsubsection.3.5.1.1}{3.5.1.1 Layer-wise Invertible Architecture}{subsection.3.5.1}% 55
+\BOOKMARK [3][]{subsubsection.3.5.1.2}{3.5.1.2 Hybrid Invertible Architecture}{subsection.3.5.1}% 56
+\BOOKMARK [2][]{subsection.3.5.2}{3.5.2 Model comparison}{section.3.5}% 57
+\BOOKMARK [1][]{section.3.6}{3.6 Conclusion}{chapter.3}% 58
+\BOOKMARK [0][]{chapter.4}{4 Semantic Feature Extraction}{}% 59
+\BOOKMARK [1][]{section.4.1}{4.1 Introduction}{chapter.4}% 60
+\BOOKMARK [1][]{section.4.2}{4.2 Related Work}{chapter.4}% 61
+\BOOKMARK [1][]{section.4.3}{4.3 Method}{chapter.4}% 62
+\BOOKMARK [1][]{section.4.4}{4.4 Word Embeddings}{chapter.4}% 63
+\BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Overview}{section.4.4}% 64
+\BOOKMARK [2][]{subsection.4.4.2}{4.4.2 Relevance}{section.4.4}% 65
+\BOOKMARK [2][]{subsection.4.4.3}{4.4.3 Limitations}{section.4.4}% 66
+\BOOKMARK [1][]{section.4.5}{4.5 Data Augmentation}{chapter.4}% 67
+\BOOKMARK [1][]{section.4.6}{4.6 Graph Embeddings}{chapter.4}% 68
+\BOOKMARK [2][]{subsection.4.6.1}{4.6.1 Knowledge graph embeddings}{section.4.6}% 69
+\BOOKMARK [2][]{subsection.4.6.2}{4.6.2 Hyperbolic taxonomy embedding}{section.4.6}% 70
+\BOOKMARK [1][]{section.4.7}{4.7 Document Embeddings}{chapter.4}% 71
+\BOOKMARK [2][]{subsection.4.7.1}{4.7.1 \040Sentence level embedding}{section.4.7}% 72
+\BOOKMARK [3][]{subsubsection.4.7.1.1}{4.7.1.1 \040Architectures}{subsection.4.7.1}% 73
+\BOOKMARK [3][]{subsubsection.4.7.1.2}{4.7.1.2 Training signals}{subsection.4.7.1}% 74
+\BOOKMARK [2][]{subsection.4.7.2}{4.7.2 Full document embedding}{section.4.7}% 75
+\BOOKMARK [1][]{section.4.8}{4.8 Experiments \046 Results}{chapter.4}% 76
+\BOOKMARK [2][]{subsection.4.8.1}{4.8.1 Methodology}{section.4.8}% 77
+\BOOKMARK [2][]{subsection.4.8.2}{4.8.2 \040Word embedding limitations }{section.4.8}% 78
+\BOOKMARK [2][]{subsection.4.8.3}{4.8.3 Standard evaluation}{section.4.8}% 79
+\BOOKMARK [1][]{section.4.9}{4.9 Conclusion \046 Discussion}{chapter.4}% 80
+\BOOKMARK [0][]{chapter.5}{5 Conclusions}{}% 81
+\BOOKMARK [0][]{chapter*.26}{References}{}% 82
+\BOOKMARK [0][]{chapter*.27}{Appendix}{}% 83
+\BOOKMARK [0][]{chapter*.30}{Acknowledgements}{}% 84
+\BOOKMARK [0][]{chapter*.31}{BibTeX Citation for This Thesis }{}% 85

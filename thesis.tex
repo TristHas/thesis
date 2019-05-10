@@ -38,11 +38,11 @@
 \usepackage{subfigure}
 \usepackage{multirow}
 
+\newcommand{\etal}{\textit{et al}.}
 %: ----------------------------------------------------------------------
 %:                  TITLE PAGE: name, degree,..
 % ----------------------------------------------------------------------
 % below is to generate the title page with crest and author name
-
 %if output to PDF then put the following in PDF header
 \ifpdf  
     \pdfinfo {/Title  (PhD Thesis)
@@ -57,12 +57,9 @@
                   /OpenAction (fitbh)  }
 \fi
 
-
 \title{{\Huge\textbf{ Doctoral Thesis }}\\
 \vspace{10mm}
   {\LARGE \bfseries Zero-Shot Recognition of Generic Objects}\\
-   %\vspace{10mm}
-   %{\LARGE \bfseries 非負値行列因子分解に基づく声質変換と\\その実用的課題への応用}
 }
 
 
@@ -81,7 +78,6 @@
 % If you are not creating a PDF then use the following. The default is PDF.
 \else
   \author{Tristan HASCOET}
-%  \cityofbirth{born in XYZ}
   \collegeordept{Graduate School of System Informatics}
   \university{Kobe University}
   \crest{ }%\includegraphics[width=4cm]{logo}}
@@ -92,8 +88,7 @@
 \degreedate{June 2019}
 
 
-% ----------------------------------------------------------------------
-       
+% ----------------------------------------------------------------------      
 % turn of those nasty overfull and underfull hboxes
 \hbadness=10000
 \hfuzz=50pt
@@ -155,7 +150,6 @@
 
 
 %: ----------------------- abstract ------------------------
-
 % Your institution may have specific regulations if you need an abstract and where it is to be placed in the document. The default here is just after title.
 
 \include{frontmatter/abstract}
@@ -183,7 +177,6 @@
 
 
 %: ----------------------- subdocuments ------------------------
-
 % Parts of the thesis are included below. Rename the files as required.
 % But take care that the paths match. You can also change the order of appearance by moving the include commands.
 %------------

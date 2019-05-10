@@ -1,18 +1,319 @@
-\chapter{Visual Feature Extraction}
-\label{chap:visuals}
+\chapter{Semantic Feature Extraction}
+\label{chap:semantics}
 
 %: ----------------------- paths to graphics ------------------------
 % change according to folder and file names
 \ifpdf
-    \graphicspath{{AD/fig/PNG/}{AD/fig/PDF/}{AD/fig/}}
+    \graphicspath{{Semantics/fig/}}
 \else
-    \graphicspath{{AD/fig/EPS/}{AD/fig/}}
+    \graphicspath{{Semantics/fig/}}
 \fi
 
 The related publications for this chapter are~\cite{}.
 
-%: ----------------------- Motivation -------------------------
-\section{The  Motivation and Related Work}
-%: ----------------------------------------------------------------
-%-----------------------------------------------------------------
-\subsection{Motivation}
+\section{Introduction}
+
+Recent successes in generic object recognition have largely been driven by the successful application of Convolutional Neural Networks (CNN) trained in a supervised manner on large image datasets. One main drawback of these approaches is that they require a large amount of annotated data to successfully generalize to unseen image samples. The collection and annotation of such dataset for custom applications can be prohibitively complex and/or expensive which hinders their applications to many real world practical scenarios. To reduce the number of training samples needed for efficient learning, \textit{few-shot learning} techniques are being actively researched. The zero-shot learning (ZSL) paradigm represents the extreme case of few-shot learning in which recognition models are trained to recognize instances of a set of target classes without any training sample to learn from. 
+
+To recognize unseen classes, ZSL models use descriptions of the visual classes, i.e., representations of the visual classes in a non-visual modality. Research in ZSL has been driven by relatively small scale benchmarks \cite{wah2011caltech,lampert2009learning} for which human-annotated visual attributes are available as visual class descriptions. In the case of generic object recognition, however, manually annotating each and every possible visual class of interest with a set of visual attributes is impractical. Hence, generalizing the zero-shot learning approaches developed on such benchmarks to the more practical case of generic object recognition comes with the additional challenge of collecting suitable descriptions of the visual classes.
+
+Finding such description presents two challenges: first, the collection of these descriptions must be automated so as to not require an expensive human annotation process. Second, the collected descriptions must be visually discriminative enough to enable the zero-shot recognition of generic objects. Word embeddings are learned in an unsupervised manner from large text corpora so that they can be collected in a large scale without human supervision. Furthermore, their successful application to a number of Natural Language Processing (NLP) tasks have shown that word embedding representations encode a number of desirable semantic features, which have been naturally assumed to generalize to vision tasks. For these desirable properties, word embeddings have become the standard visual class descriptions used by recent zero-shot generic object recognition models(\cite{kodirov2017semantic,xian2017zero,frome2013devise,changpinyo2016synthesized,norouzi2013zero}).
+
+In this paper, we first question the current consensus on using word embeddings for zero-shot recognition of visual classes and discuss the relevance and limitations of the application of word embeddings to vision tasks. We then argue that generic objects can also be described by either text documents or knowledge graph data that satisfy our requirements: these descriptions both contain visually discriminative information and are automatically collectible from the web in a large scale, without requiring human intervention. We then present state of the art methods to learn feature representations of both graph and text documents. Finally, we use a simple ZSL baseline \cite{romera2015embarrassingly} model to evaluate the visually discriminative power of these representations on a zero-shot generic object recognition benchmark. In the remainder or this paper, we refer to the descriptions of visual classes in different modalities as different \textit{levels} of descriptions: either as word-, document-, or graph-level descriptions. 
+
+Our investigation highlights large differences in the ZSL accuracy of our baseline model using different embeddings. First, we find all word embedding models to not be equal: using GloVe \cite{pennington2014glove} representations instead of the Word2vec \cite{mikolov2013distributed} vectors used by previous works almost doubles the accuracy of our baseline model on a standard test split, effectively outperforming state-of-the-art results obtained by more sophisticated ZSL models. Second, we find that different levels of descriptions are better suited to different application settings: graph embeddings tend to outperform word and document embeddings for small test class sets that are semantically close to the training classes according to the Wordnet hierarchy. In fact, we show that embedding a simple taxonomy of visual classes with a recently proposed model \cite{nickel2017poincare} slightly outperforms the best performing word embeddings. Embedding the full Wordnet knowledge graph, we are able to further improve on the state-of-the-art by a relative 45\%. On the other hand, we found graph embeddings to perform poorly on larger, more diverse test sets. On such difficult test sets, document embeddings tend to perform the best, although classification accuracy remains very low.
+
+To summarize, the contributions of our work are as follows:
+\begin{itemize}
+  \item We give insights into the relevance (Section 4.2) and limitations (Section 4.3) of word embeddings for zero-shot recognition of generic objects. We conduct a set of experiments to quantify the extent of these limitations (Section 8.2).
+  \item We show how Linked Open Data can be used to automatically collect rich descriptions of generic objects at the graph and document levels (Section 5).
+  \item We review the literature on graph (Section 6) and document (Section 7) embedding.
+  \item We conduct the first, to the best of our knowledge, large-scale investigation of semantic representations for zero-shot recognition of generic objects (Section 8.3).
+  \item We make our code and data openly available for future research.
+\end{itemize}
+
+Section 2 reviews the literature for related work and Section 3 presents the methodology used in our investigation.
+
+\section{Related Work}
+
+While the majority of works on zero-shot generic object recognition have used word embeddings as semantic features, some works have explored the use of different semantic features, which we present in this section. 
+
+In \cite{rohrbach2010helps}, the authors use different linguistic resources to derive semantic similarity scores between classes, between classes and attributes, and to automatically mine attribute-classes correspondence. Similar to our work, they automate the acquisition of semantic data from knowledge bases, but they focus on deriving semantic similarity scores and part attributes while we evaluate graph embedding models. 
+
+\cite{mensink2014costa} uses visual class co-occurrence statistics to perform ZSL. Given a training set of multi-labeled images and similarity scores between known and unknown labels, they use the co-occurrence distribution of known labels to predict the occurrence of unknown labels in test images. Their multi-label classification setting differs from the ZSL setting in which input images are classified into a unique class. 
+
+\cite{mukherjee2016gaussian} questions the limits of using a single data point (word embedding vectors) as semantic representations of visual classes because this setting does not allow the representation of intra-class variance of semantic concepts. They used Gaussian distributions to model both semantic and visual feature distributions of the visual classes. 
+
+More related to our work, \cite{wang2017alternative} investigates different semantic representations for zero-shot action recognition. They compare different representations of documents and videos, while we investigate the application of word, document and knowledge graph embeddings to zero-shot recognition of generic objects.
+
+A series of works of \cite{akata2015evaluation,xian2016latent,akata2016label} compares the zero-shot classification accuracy obtained with semantic representations derived from words, taxonomy and manual attribute annotations on fine-grain or small scale ZSL benchmarks. Our investigation differs in that we are concerned with the more practical task of generic object recognition and we investigate a broader class of semantic features. 
+
+\section{Method}
+
+The general architecture of ZSL models can be seen as the combination of three modules $\{V,S,E\}$, as illustrated in Figure 1. The visual module $V$ extracts high-level visual features $V(x)$ from raw input images $x$; the semantic module $S$ extracts semantic features $S(y)$ from raw descriptions $y$ of the visual classes and the core ZSL module $E$ computes a similarity score $E(V(x), S(y))$ between semantic and visual features. 
+
+ZSL models aim to generalize the classification ability of traditional image classifiers to out-of-sample classes for which no image sample is available to learn from. To evaluate the out-of-sample recognition ability of models, ZSL benchmarks split the full set of classes $C$ into disjoint training and test sets.
+\begin{subequations} 
+\begin{align}
+& C_{train} \cup C_{test} \subset C \\
+& C_{train} \cap C_{test} = \emptyset \\
+& Tr = \{(x,y), y \in C_{train}\} \\
+& Te = \{(x,y), y \in C_{test}\} 
+\end{align}
+\end{subequations} 
+Learning is performed by minimizing a loss function $\mathcal{L}$ over the regularized similarity score of the set of training sample $Tr$ with respect to the model's parameters $W$.  
+\begin{equation} 
+W^{*} = argmin_{W} \mathbb{E}_{(x,y) \in Tr}\mathcal{L}(E(V(x),S(y)) + \Omega(W)
+\end{equation} 
+At test time, an image $x_{test}$ can be classified among the set of unseen test classes by retrieving the description $y$ of highest similarity score.
+\begin{equation} 
+y^{*} = argmax_{y \in C_{test}}E(V(x_{test}), S(y))
+\end{equation} 
+
+The visual and semantic modules can either be learned jointly with the core ZSL module in an end-to-end procedure by back-propagation of the error signal from the core ZSL module to the two lower modules, or they can be learned independently on unsupervised or auxiliary supervised tasks (e.g., pretraining the visual module on the ILSVRC classification task and pretraining the semantic module as an unsupervised word embedding model). 
+
+Our work focuses exclusively on the semantic module: we question what raw descriptions $y$ and embedding module $S$ provide semantic features $S(y)$ that are most visually discriminative so as to enable zero-shot recognition of generic objects. We restrict our study to embedding models $S$ learned independently from other modules, without visual supervision from the ZSL module. 
+
+To conduct our study, we are heavily dependent on the data available to us in the form of image-description pairs $(x,y)$. We use the ImageNet dataset as our starting point as it has become the standard evaluation benchmark for generic object ZSL. In ImageNet, visual classes are indexed by Wordnet concepts, which are defined by three components that correspond to the three levels of representations we investigate: their lemmas (a set of synonym words that refer to the concept), a definition in natural language, and a node connected by a set of predicate edges to other concept nodes of the Wordnet knowledge graph. Figure 2 illustrates the different levels of descriptions provided by Wordnet.
+
+In section 5, we will show how the semantic web can be used to automatically collect document- and graph-level descriptions of visual classes that are order of magnitudes larger than the descriptions provided by Wordnet. We first discuss the relevance and limitations of word embeddings in the following section.
+
+\section{Word Embeddings}
+\subsection{Overview}
+Distributional Semantic Models (DSM) and neural word embeddings are two related classes of models that learn continuous distributed representations of words. These models implement the distributional hypothesis that states that the meaning of words can be defined by the context in which they occur. DSMs explicitly factorize matrices of word co-occurrence statistics while neural word embedding models learn word representations by stochastic optimization methods. The latter typically sample individual words and their context from large text corpora, maximizing a similarity score between co-occurring words. These approaches have been extensively studied both theoretically \cite{levy2014neural} and practically \cite{baroni2014don}. In \cite{levy2014neural}, the authors show that the skip-gram word2vec model with negative sampling implicitly factorizes a shifted PMI matrix, suggesting that both approaches are qualitatively similar. For the sake of the following discussion, we consider that word embedding models do implicitly factorize matrices derived from word co-occurrence statistics following \cite{levy2014neural}. While qualitatively similar, the empirical study of \cite{baroni2014don} showed that neural embedding approaches tend to outperform DSM models on standard benchmarks. In Section 8.2, we evaluate three state-of-the-art embedding models on our ZSL benchmark: GloVe \cite{pennington2014glove}, FastText \cite{joulin2017bag} and word2vec \cite{mikolov2013distributed}.
+
+\subsection{Relevance}
+Word embeddings have been shown to efficiently encode lexical and semantic similarities between words. Their successful application to NLP tasks has prompted word embeddings as standard semantic representations for zero-shot learning, while there has been little discussion as to the relevance and limitations of their application to vision task. 
+
+Slightly different from the original distributional hypothesis, ZSL models using word embeddings as semantic features make the assumption that the \textit{appearance of generic objects} can be characterized by the context in which their lemmas occur. Table 1 shows the co-occurrence frequency of a few common visual class lemmas with words that explicitly characterize visual attributes. This table shows that visual class lemmas tend to share high co-occurrence frequency with either their part attributes (i.e., both car and truck co-occur more frequently with wheel than bird and cassowary do) or action verbs that implicitly impacts the shape of these objects (i.e. both cars and trucks are ``drivable'' vehicles). This suggests that the co-occurrence patterns of words in large text corpora indeed contain information regarding distinctive visual features shared among classes. Hence, the latent space learned by the implicit factorization of such matrix embeds visually discriminative information so that word embeddings provide suitable semantic representations for zero-shot learning applications. A particular exception that stands out from Table 1 is the word cassowary, which we discuss in the following section.
+
+\begin{table}[t]
+\centering
+\caption{Lemmas co-occurrence with visually discriminative words}
+\begin{tabular}{ c c c c c}			
+ & car & truck & bird & cassowary\\
+\hline			
+wheel     & $1.3 \times 10^{-4}$ & $1.6 \times 10^{-4}$ & $2.0 \times 10^{-6}$ & $0.0$ \\
+drive     & $1.0 \times 10^{-3}$ & $1.0 \times 10^{-3}$ & $2.2 \times 10^{-5}$ & $2.4 \times 10^{-3}$ \\
+wings     & $4.0 \times 10^{-6}$ & $0.0$ & $1.6\times 10^{-4}$ & $0.0$ \\
+beak      & $0.0$ & $0.0$ & $5.2\times 10^{-5}$ & $0.0$ \\
+\hline
+occ. & $4.7 \times 10^{5}$ & $7.8 \times 10^{4}$ & $1.4 \times 10^{5}$ & $7.9 \times 10^{2}$  \\
+\hline	
+\end{tabular}
+Statistics presented in this table were gathered from the English Wikipedia corpus with a context window size of 5 words. Columns correspond to visual class lemmas and rows correspond to visually discriminative words. The last row shows the number of occurrence of the visual class lemmas in the corpus. Upper rows show the frequency of occurrence of visually discriminative words within the context of visual class lemmas. For example, the upper left value denotes $p(wheel|car)$.
+\end{table}
+\subsection{Limitations}
+
+Consider describing a small set of naturally occurring generic objects such as the ``car'', ``truck'' and ``bird'' classes presented in Table 1. Coarse-grain visual classes seem to be well defined by such common words, for which rich co-occurrence statistics can be easily collected from large text corpora. However, humans can identify categories well beyond the limited scope of such coarse-grain visual classes. As one considers larger visual class sets of finer grain, several complications arise: 
+
+\textbf{N-grams.} Different from coarse grain concepts, fine-grain concepts are often not best described by single words but by composition of words (e.g. n-grams such as ``polar bear'' or ``blue jeans'' vs. their unigram parent class ``bear'' and ``trousers''). We found that 54.2\% of ImageNet class lemmas are not single words but n-grams. N-grams representations can be computed (e.g., by averaging of their individual words) but we question whether n-gram embeddings can be as visually discriminative as single word embeddings. In section 7.2, we investigate the impact of n-gram composition on ZSL accuracy.
+
+\textbf{Rare words.} We found that fine-grain visual classes that are correctly defined by a single word tend to be defined by rare words (e.g. the rare lemma ``cassowary'' vs. the common lemma ``bird'' of its parent class). As discussed in the previous section, word embeddings are learned from their co-occurrence statistics in large text corpora. While visual clues are embedded in words co-occurrence patterns, a considerable amount of noise (i.e. non visually discriminative information) stems from random word co-occurrences. The example of Cassowary is illustrated in Table 1. The word ``cassowary'' only occurs $792$ times in the English Wikipedia corpus in which it does not co-occur once with the visual bird-like attributes ``wings'' or ``beak''. Instead, ``cassowary'' randomly co-occurs once with the word ``drive''. We conjecture that frequently occurring words provide more visually discriminative representations than rare words because of the higher ``visual signal to noise ratio'' of their co-occurrence statistics. We found that 9.7\% of ImageNet lemmas appear less than 10 times in Wikipedia. Figure 4a shows the occurrence count distribution of ImageNet lemmas in the English Wikipedia corpus and, in Section 8.2, we investigate the impact of lemma occurrence frequency on ZSL accuracy.
+
+\textbf{Homonyms.} Natural languages contain many\\ homonyms which makes it difficult to uniquely identify visual classes with a single word. For example, a ``(river) bank'' and a ``(financial) bank'' share similar representations in a word embedding space while being two different visual concepts. The consequences of homonymy are two folds: first, the semantic representation of homonym classes is learned from the co-occurrence statistics of the different meanings of the lemma which results in noisy embeddings. Second, a mechanism to break ties between homonym visual classes must be given. We found that 13\% of the ImageNet lemmas are shared with at least one other class and 38\% of ImageNet classes share a lexical form with at least one other class. A rigorous evaluation of the impact of homonymy on ZSL accuracy involves evaluating different heuristics to break ties between homonym classes which is beyond the scope of this work so we do not evaluate the impact of homonymy as we only mention it for completeness.
+
+\section{Data Augmentation}
+\begin{table}[t]
+\centering
+\caption{Comparison of knowledge base statistics}
+\begin{tabular}{ c c c | c c c}	
+ & \multicolumn{2}{c}{Documents} & \multicolumn{3}{c}{Graphs} \\	
+ & doc & w/doc & nodes & edges & triples\\
+\hline			
+Wordnet   & 117k & 10 & 117k & 20 & 372k\\
+Babelnet  & - & - & 15M & 2.3k & 1.3G\\
+Wikipedia & 5.6M & 630 & - & - & -\\
+\hline
+\end{tabular}
+\\(left) Number of document and average size (word per documents) of Wordnet definitions vs. Wikipedia articles. (right) number of nodes, edge types and triples of Wordnet vs. Babelnet knowledge graphs
+\end{table}
+
+The limitations of word-level representations highlighted in the previous section motivate us to investigate graph- and document-level descriptions. In this section, we focus on the automated acquisition of raw descriptions $y$ to augment the Wordnet definitions and knowledge graph.
+ 
+An interesting feature of WordNet is its integration to the Linked Open Data (LOD) cloud. Linked Data \cite{yu2011linked} refers to a set of best practices for publishers to integrate their data into a web of data; i.e, the semantic web. The LOD cloud references openly published datasets that follow the Linked Data best practices. Datasets of the LOD cloud contain links from their resources to resources of other LOD datasets. These links define equivalences between Wordnet concepts and resources of larger, richer knowledge bases. In particular, Wordnet concepts have been fully mapped to entities of the Babelnet \cite{navigli2012babelnet} knowledge graph. Babelnet entities are also linked to external knowledge bases such as DBPedia or Freebase. Following the links of the LOD cloud, as illustrated in Figure 3, we are able to collect descriptions of ImageNet classes orders of magnitude larger than the graph and document descriptions provided by Wordnet in a fully automated process. In our experiments, we used the Babelnet knowledge graph as augmented graph-level descriptions and Wikipedia articles as augmented document-level descriptions. Table 2 summarizes statistics of these datasets to illustrate the scale of this data augmentation.
+
+
+\section{Graph Embeddings}
+A knowledge graph can be formalized as a set of facts $\mathcal{G}=\{(s,p,o) \in \mathcal{E} \times \mathcal{R} \times \mathcal{E}\}$. Each fact in the graph consists of a predicate (edge) $p \in \mathcal{R}$  and two entities (nodes) $s,o \in \mathcal{E} \times \mathcal{E}$, respectively referred to as the subject and object of the triple.  Each triple  denotes a relationship of type $p$ between the subject $s$ and the object $o$. Learning distributed representations of knowledge graph nodes and edges has been extensively studied in the framework of Statistical Relational Learning (SRL) \cite{getoor2007introduction}. SRL models are concerned with knowledge base completion tasks in which models aim to recover missing facts from large and incomplete knowledge graphs. In the following subsection, we review a subset of the literature on knowledge graph embeddings and, in Section 8.3, we evaluate the representations learned by these models on our ZSL benchmark. We refer the reader to \cite{wang2017knowledge} for more in-depth coverage of state-of-the-art models. 
+
+In addition to knowledge graph embeddings we consider methods from network embeddings; i.e., embeddings of non-typed edge graphs. Recently, two concurrent works (\cite{chamberlainneural}, \cite{nickel2017poincare}) have shown the benefits of hyperbolic space properties for embedding tree-like hierarchical data. In particular, \cite{nickel2017poincare} has shown impressively low reconstruction errors of hyperbolic embeddings of the Wordnet hierarchy. Follow-up work \cite{de2018representation} have shown that the Wordnet hierarchy can be embedded perfectly (i.e. with zero reconstruction error) in a two-dimensional Poincarre disk. Because of their impressive success, we include the model introduced in \cite{nickel2017poincare} in our evaluation in section 8.3. We briefly present this work in Section 6.2. At the time of this writing, hyperbolic embedding models have not yet been extended to graph structures with typed edges like knowledge graphs. Hence, we apply \cite{nickel2017poincare} to the Wordnet hierarchy (the subset of $\mathcal{G}$ considering only the Hypernym-Hyponym predicates).
+
+\subsection{Knowledge graph embeddings}
+Knowledge graph embedding models include tensor decomposition and neural embedding models. In \cite{kadlec2017knowledge}, the authors show that simple neural embedding baselines such as DistMult \cite{yang2015embedding} tend to outperform more sophisticated approaches on several benchmark knowledge base completion tasks, which leads us to focus on baseline neural embedding models. Neural embedding models learn $d$-dimensional vector representations of entities $\{e_i \in \mathbb{R}^d, \forall i \in \mathcal{E}\}$ and relations $\{r_i \in \mathbb{R}^d, \forall i \in \mathcal{R}\}$ by maximizing a scoring function $\psi(e_s,r_p,e_o)$ for triples $(s,p,o) \in G$. Learning is performed stochastically by minimizing a loss function $\mathcal{L}$ over the score of randomly sampled triples: 
+\begin{equation} 
+e^{*}, r^{*} = argmin\Big(\mathbb{E}_{(s,p,o) \in \mathcal{G}}\mathcal{L}\big(\psi(e_s,r_p,e_o)\big)\Big)
+\end{equation} 
+Different embedding models differ in their choice of scoring function $\psi(e_s,r_p,e_o)$ and loss function $\mathcal{L}$ used for training. Table 3 summarizes the scoring function of popular models we evaluate in section 8.3.
+\begin{table}[t]
+  \centering
+\caption{Neural embedding scoring and loss functions}
+\begin{tabular}{ l c  c}
+\hline			
+Model & $\psi(e_s,r_p,e_o)$ & $\mathcal{L}$\\
+\hline			
+$TransE$ \cite{bordes2013translating} & $ \|e_s + r_p - e_o \|$  & $L_2$\\
+$DistMult$ \cite{yang2015embedding} & $\langle e_s, r_p, e_o \rangle$ & $Ranking$\\
+$ConvE$ \cite{dettmers2017convolutional}  & $ f(vec(f([e_s;r_p] * w))W)e_o $ & $BCE$\\
+$TransE^*$ & $\langle e_s + r_p, e_o \rangle$ & $Triplet$ \\
+\hline		
+\end{tabular}
+\end{table}
+TransE \cite{bordes2013translating} proposes to model relations $r$ as translations in a Euclidean space, and considers the standard euclidean distance between translated subject and object embeddings as scoring function. DistMult \cite{yang2015embedding} uses the trilinear dot product $\langle x, y, z \rangle = \sum_i x_iy_iz_i$ scoring function with a margin-based ranking loss function. ConvE \cite{dettmers2017convolutional} introduces depth in the scoring function. Their model consists of a convolution layer over the concatenation $ [e_s, r_r ]$ of the subject and predicate representations followed by a linear layer with ReLu activations. They use the dot product between the output of the network and the object embedding $e_o$ as similarity score and the Binary Cross Entropy as loss function. While experimenting with these models, we found that representing relations as translations (similar to TransE) with a sigmoid dot product similarity score (similar to DistMult) yield highest accuracy. We also found the triplet margin loss to improve the quality of our embeddings. This variation is shown as $TransE^{*}$ in Table 3 and evaluated in section 8.3 together with other baselines.
+\subsection{Hyperbolic taxonomy embedding}
+The work of \cite{nickel2017poincare} proposed an original method called Poincarre embeddings to learn continuous embedding of symbols organized in a latent hierarchy. Instead of considering distances in a Euclidean space, the Poincarre model embeds symbols in a hyperbolic space in which the distance from data point $u$ to $v$ can be expressed as: 
+\begin{equation} 
+d(u,v)=arcosh\Big( 1 + 2 \dfrac{\|u-v\|^2}{(1 - \|u\|^2)(1 - \|v\|^2)} \Big)
+\end{equation} 
+Given a set of untyped edges $\mathcal{D} = \{(u,v)\}$, embeddings are learned by stochastic gradient descent so as to minimize the following loss function:
+\begin{equation} 
+\mathcal{L}(\mathcal{D}) = \sum_{(u,v) \in \mathcal{D}}log\dfrac{e^{(-d(u,v))}}{\sum_{v' \in \mathcal{N}(u)}e^{-d(u,v')}}
+\end{equation} 
+Where $v' \in \mathcal{N}(u)$ represents a set of negative sample nodes $v'$ that are not connected by an edge to $u$. The representations learned by this model have shown to better capture the hierarchical structure of taxonomies. 
+\section{Document Embeddings}
+
+In this section, we review the literature for learning embeddings from text documents. Different models are concerned with documents of different scale, so we separately present embedding models for short, sentence-like documents (i.e. Wordnet definitions) and models concerned with full-text documents (i.e. Wikipedia articles). Sentence-level embeddings have been extensively studied for NLP applications, such as natural language inference or sentiment analysis, whereas full-text document embeddings have mainly been studied for information retrieval applications.
+\subsection{ Sentence level embedding}
+The spectrum of different meanings that can be expressed by sentences is combinatorially more complex than the spectrum of meaning covered by individual words so that there is no agreed-upon universal sentence embedding model as there are for word embeddings. Instead, different models have been shown to be better suited to different NLP tasks. 
+
+Learning sentence embedding has been a very active topic of research over the last few years which has lead to a variety of architectures and training procedures. In this section, we discuss most relevant works, that we evaluate in Section 8.3. 
+
+Let $S=[w_0, w_1, ..., w_T]$ be a sentence of $T$ words. Sentence embedding models produce a fixed-length representation $f(S)$ from variable-length sequences of words $S$. Different models differ in the choice of architecture and training signal used by the model. 
+\subsubsection{ Architectures}
+Most state-of-the-art models use either bag of words (BoW) or recurrent (Rec) architectures. BoW architectures represent sentences as the mean of transformations $g(w_i)$ applied to their individual words $w_i \in S$.
+\begin{equation} 
+BoW(S) = \frac{1}{T} \sum_{i=1}^T g(w_i)
+\end{equation} 
+The BoW models we investigate use either the identity function $g(x)=x$ or linear projections $g_W(x)=Wx$. We respectively refer to these models as $BoW_{id}$ and  $BoW_{lin}$. Recurrent architectures sequentially process the words of a sentence by maintaining an internal state vector $s_t$ at each step $t$ of the processing, following equations (5). The exact formulation of functions $g$ and $f$ depends on the particular architecture used (LSTM, GRU or RNN).
+\begin{subequations} 
+\begin{align}
+&s_{t} = g(s_{t-1}, w_t) \\
+&o_{t} = f(s_t, w_t) \\
+&Rec(S)  = o_{T} = f(s_{T}, w_{T})
+\end{align}
+\end{subequations} 
+\subsubsection{Training signals}
+Sentence embedding models can either be trained on supervised or unsupervised tasks. Supervised models are trained on corpora of labeled sentences, and use sentence labels as training signal. Unsupervised models either use the context information of neighboring sentences (inter-sentence objectives) in a corpus of ordered sentences as training signal or only use the information of their own words (intra-sentence objectives).
+
+\textbf{Supervised objectives.} In \cite{conneau2017supervised}, the authors argue that models trained on the task of natural language inference (NLI) learn universal representations of sentences that generalize well to other NLP tasks. Their model, InferSent, uses recurrent architectures trained on the MultiNLI dataset.
+
+DictRep \cite{hill2015learning} is trained to map dictionary definitions of words to their word embeddings. They investigate both $BoW_{lin}$ and $LSTM$ architectures.
+
+Using similar architectures, the same work proposes CaptRep to learn visually grounded sentence representations by mapping image captions to image features. They use the MS-COCO dataset and extract visual features using a CNN.
+
+\textbf{Unsupervised inter-sentence objectives.} The SkipThought model \cite{kiros2015skip} uses a $LSTM$ sequence-to-sequence architecture. Given a corpus of ordered sentences $[S_0, S_1, ..., S_N]$, the model is trained to predict neighboring sentences $S_{i-1}$, $S_{i+1}$ from a sentence $S_i$.
+
+The FastSent model \cite{hill2016learning} uses adjacent sentences as prediction target similar to SkipThought. Unlike SkipThought, they use a $BoW_{id}$ model with a log bilinear objective function to speed up the training process.
+
+\textbf{Unsupervised intra-sentence objectives.} The Paragraph2vec model \cite{le2014distributed} extends the original word2vec model to sentences and document. To do so, \cite{le2014distributed} proposes to jointly learn sentence (or paragraph) representations as context words together with the word embeddings. 
+
+The Sent2vec \cite{pagliardini2017unsupervised} model proposes a different extension of the word2vec model: different from Paragrah2vec, the Sent2vec does not explicitly learn sentence representations. Instead, they model sentences with the $BoW_{id}$ architecture. Sent2vec is trained to predict each individual word of a sentence given the BoW representation of the other words of the sentence.	
+
+Similar to SkipThought, Sequential Denoising Autoencoder (SDAE, \cite{hill2016learning}) uses a recurrent sequence-to-sequence architecture. Different from Skipthough, SDAE injects noise in the input sentences and uses the reconstruction loss of the output as training signal.
+
+\subsection{Full document embedding}
+Embedding full-length document has mainly been studied for document retrieval applications for which two of the most popular methods are Latent Semantic Indexing \cite{dumais2004latent} and Latent Dirichlet Allocation \cite{blei2003latent}. Latent Semantic Indexing performs singular value decomposition on a matrix of term/document occurrence matrix. The TF-IDF model was introduced as a weighting factor to reduce the impact of frequently occurring words and has been shown to improve search results on document retrieval tasks. In section 8.3, we evaluate the TF-IDF representations of Wikipedia articles on our ZSL benchmark.
+
+In addition to image retrieval, the processing of full-text documents has recently attracted the attention of the machine learning community for problems including abstractive text summarization \cite{nallapati2016abstractive} and open question answering \cite{chen2017reading}. These models typically use attention mechanisms to attend to specific segments of the document relevant to the task at hand. However, these models are not concerned with extracting fixed-length representations of the document content so that their integration to ZSL models is not straightforward. Integration of such models to the ZSL pipeline using the Wikipedia articles we provide represents one interesting direction for future research.
+
+\section{Experiments \& Results}
+\subsection{Methodology}
+In the following experiments, we used the 1,000 classes of the ILSVRC2012 image classification dataset as a training set. We use a ResNet-50 \cite{he2016deep} as the visual module to extract 2048-dimension feature vectors from raw images. We use the ESZSL model proposed in \cite{romera2015embarrassingly} as the core ZSL module. We evaluate the classification accuracy of our model using different semantic modules on different test splits as described in the following subsections. 
+
+When openly available, we always prefer the reference implementation of the semantic modules we evaluate. We re-implement the models for which no open implementation has been released. All implementations are made available on the github page of the project\footnote{https://github.com/TristHas/ZSL-semantics}. Detailed hyper-parameters and training settings are also accessible on the project page. Experiments with word embeddings were performed using the pretrained vectors as released by the original papers.
+
+\subsection{ Word embedding limitations }
+In this section, we quantify the limitations of word embeddings discussed in Section 4. Results presented in this section were obtained with pretrained FastText embeddings as we found FastText vectors to provide a better coverage of ImageNet lemmas than GloVe and word2vec (very rare lemmas are often missing from pretrained vectors).
+
+\textbf{Rare words.} In Section 4, we conjecture that frequent words, learned from dense co-occurrence statistics, provide more discriminative embeddings than rare words, learned from scarce co-occurrence statistics. Figure 4a shows the distribution of occurrence counts of the visual class lemmas in the full Wikipedia English corpus. We split the ImageNet dataset class-wise into 5 artificial subsets. Each split $k$ contains visual classes whose lemmas appear between $10^k$ and $10^{k+1}$ times in the English Wikipedia corpus. We evaluate each split individually. For each split, we randomly sample 200 classes, and evaluate the accuracy of our model on a 200 class classification problem. As different randomly sampled test class sets yield different results, we repeat this operation 20 times per split with different randomly sampled test class sets, and we present the mean, first quartiles, and extrema of each split's top-1 accuracy in Figure 4b. 
+
+Our results highlight a strong correlation between lemmas frequency and classification accuracy. The first two splits (rare words) strikingly under-perform mid-frequency terms with 6\% and 7\% mean accuracy compared to the 14\% accuracy of the best performing splits. On the other hand, we found that very frequent words also show lower classification accuracy, which was unexpected.
+
+\textbf{N-grams.} In this experiment, we evaluate the impact of n-grams on the classification accuracy of our model. Figure 5a shows the distribution of ImageNet lemmas as n-grams and unigrams. We split the ImageNet dataset into unigram and n-gram lemmas class sets. N-gram representations were computed as the mean of their individual word embeddings. As lemma scarcity might be correlated to their being n-gram or unigram, we only used classes whose lemmas appear between 1000 and 100,000 times within the English Wikipedia corpus to reduce the influence of lemma scarcity. Figure 5b shows the top-1 accuracy of each split, following the evaluation protocol described for the lemma scarcity evaluation.
+ 
+Surprisingly, ZSL accuracy does not seem to suffer from the ``n-gram-ness'' of visual class lemmas as n-gram lemmas even outperform single word lemmas by an average of 2\%.
+
+\subsection{Standard evaluation}
+\begin{table*}[t]
+\centering
+\caption{Results on the standard ImageNet ESZSL test splits.}
+\begin{tabular}{c c c c c c c c c c c c }
+&&&\multicolumn{3}{c}{2-hop}&\multicolumn{3}{c}{3-hop}&\multicolumn{3}{c}{All} \\
+\hline
+ZSL module & description & semantic module & top-1 & top-5 & top-10  & top-1 & top-5 & top-10 & top-1 & top-5 & top-10\\
+\hline		
+\multirow{3}{*}{ESZSL} & \multirow{3}{*}{Wordnet lemmas} & $word2vec$   & 5.84   & 18.57  &  27.70  &  1.45  &  5.04  &  8.08  &  0.37  & 1.17  &  1.86 \\
+ &  & $FastText$  & 9.29  & 27.15 &  37.41  &  1.86  &  6.13  &  9.82   &  0.35  &  0.97 &  1.45 \\
+ &  & $GloVe$     & 10.96 & 30.51 &  41.25  &  \textbf{2.31}  &  \textbf{7.73}  &  \textbf{12.25}  &  0.52  & 1.55  &  2.39\\
+\hline	
+ESZSL & Wordnet hierarchy & $Poincarre$ & 10.99  & 32.34  &  44.17 &  1.19  &  4.51  &  7.70  &  0.05  & 0.19  & 0.32\\
+\hline
+\multirow{4}{*}{ESZSL} & \multirow{4}{*}{Wordnet graph} & $TransE$   & 5.58  & 12.37  &  15.76  &  0.35  & 1.40  &  2.07  &  0.06  &  0.15  &  0.29 \\
+&  &$DistMult$           & 10.84 &  38.02  &  49.57  &  1.34  &  4.89  &  7.92  &  0.13  &  0.39  &  0.56 \\
+&  &$ConvE$              & 4.23  &  10.12  &  13.46  &  0.15  &  0.43  &  0.67  &  0.01  &  0.06  &  0.09  \\
+&  &$TransE^{*}$         & \textbf{13.49} &  \textbf{40.51}  &  \textbf{51.99}  &  1.67  &  6.29  &  9.89  &  0.14  &  0.35  & 0.51  \\
+\hline	
+\multirow{3}{*}{ESZSL}& \multirow{3}{*}{Babelnet graph} &$TransE$   &  3.71 &  11.08 & 14.61  & 0.10  & 0.32  &  0.51  &  0.02  & 0.09  &  0.15\\
+&  &$DistMult$          & 5.96   & 17.40  &  25.46 & 1.00  &  3.79 &  6.36  &  0.14  & 0.47  &  0.80 \\
+&  &$TransE^{*}$              & 11.31  & 31.12  &  42.63 & 2.13  &  6.68 &  10.37 &  0.32  & 0.83  &  1.23 \\
+\hline	
+\multirow{7}{*}{ESZSL}& \multirow{7}{*}{Wordnet definitions} &$InferSent$ &  6.68  &  21.42  &  32.25  &  2.10  &  7.07  &  11.48  &  \textbf{0.62} &  2.25 &  3.63 \\
+&  &$DictRep$           &  6.44 &  22.17 & 33.40  & 1.71  & 6.53  & 10.78  & 0.60  &  \textbf{2.45}   &  \textbf{4.15}  \\
+&  &$CapRep$            &  4.16 &  14.39 & 23.02  & 0.97  & 3.85  & 6.62   & 0.17  &  0.66   &  1.18  \\
+&  &$Sent2vec$          &  4.09 &  15.47 & 24.75  & 1.24  & 4.79  & 8.01   & 0.20  &  0.83   &  1.49 \\
+&  &$SDAE$              &  4.15 &  13.97 & 21.23  & 1.41  & 4.80  & 7.56   & 0.33  &  0.91   &  1.53 \\
+&  &$SkipThought$       &  1.72 &   4.02 &  5.65  & 0.48  & 1.57  & 2.35   & 0.11  &  0.34   &  0.53 \\
+&  &$FastSent$          &  1.90 &   9.81 & 15.65  & 0.70  & 3.91  & 6.82   & 0.20  &  0.43   &  0.72 \\
+\hline
+\multirow{1}{*}{ESZSL}& \multirow{1}{*}{Wikipedia articles} & $TFIDF$ & 9.03  & 26.53  &  37.31  &  - & -  & -  &  - &  - & - \\	
+\hline	
+\multicolumn{12}{c}{State-of-the-art}	 \\
+\hline	
+SYNC \cite{changpinyo2016synthesized} & \multirow{8}{*}{Wordnet lemmas} & \multirow{8}{*}{$word2vec$} & \textbf{9.26} &  \multirow{8}{*}{-} &  \multirow{8}{*}{-} & \textbf{2.29} &  \multirow{8}{*}{-} &  \multirow{8}{*}{-} & \textbf{0.96} &  \multirow{8}{*}{-} &  \multirow{8}{*}{-} \\
+CONSE \cite{norouzi2013zero} &   &  & 7.63 &  &  & 2.18 &  &  & 0.95 &  &  \\
+ESZSL \cite{romera2015embarrassingly} &   &  & 6.35 &  &  & 1.51 &  &  & 0.62 &  &  \\
+ALE  \cite{akata2016label} &   &  & 5.38 &  &  & 1.32 &  &  & 0.5 &  &  \\
+LATEM \cite{xian2016latent}&   &  & 5.45 &  &  & 1.32 &  &  & 0.5 &  &  \\
+SJE \cite{akata2015evaluation}  &   &  & 5.31 &  &  & 1.33 &  &  & 0.52 &  &  \\
+DEVISE\cite{frome2013devise}&   &  & 5.25 &  &  & 1.29 &  &  & 0.49 &  &  \\
+CMT  \cite{socher2013zero} &   &  & 2.88 &  &  & 0.67 &  &  & 0.29 &  &  \\
+\hline
+\end{tabular}
+The upper part of the table shows our results using the ESZSL model with different semantic representations. The bottom part of the table shows state-of-the-art results as reported in \cite{xian2017zero}
+\end{table*}
+
+Table 4 presents the results of our evaluation on standard test splits used in previous works \cite{kodirov2017semantic,xian2017zero,frome2013devise,changpinyo2016synthesized,norouzi2013zero}. The hop-2 split consists of the $1,509$ classes within two hops of the training classes in the Wordnet hierarchy. The hop-3 split consists of the $7,678$ classes within 3 hops and the ``all'' dataset considers the full set of $20K$ classes.
+
+\textbf{General Observations.} The bottom section of the table presents the state-of-the art results obtained using word2vec embeddings as reported in \cite{xian2017zero}. Note that the result they report for the ESZSL model using word2vec semantic vectors slightly outperform ours, which might be due to the different visual features we use. This indicates that the higher accuracies can not be attribute to our use of better visual features but are the results of more discriminative semantic features.
+
+
+\textbf{Word embeddings.} Table 4 highlights striking differences in performance between the word2vec embeddings used in previous works (\cite{kodirov2017semantic,xian2017zero,frome2013devise,changpinyo2016synthesized,norouzi2013zero}) and both GloVe and FastText embeddings. Using GloVe embeddings with the ESZSL model ($10.96\%$ top-1 accuracy on hop-2 split), we are able to improve on the state-of-the-art (SYNC, $9.26\%$) by an absolute $1.70\%$ on the top-1 accuracy of the hop-2 split.
+
+\textbf{Sentence embeddings.} We expected sentence embedding to provide strong representations as they contain explicit references to fine-grain visual features of visual classes as illustrated by the definition of Cassowary given in Figure 2. Despite being a very active research topics, sentence embedding models performed surprisingly poorly on the hop-2 test split. We observe that models trained with supervised training signals tend to perform better than modes trained in an unsupervised manner. Among unsupervised models, models trained with intra-sentence signals like Sent2vec seem to perform better than SkipThought or FastSent that use inter-sentence training signal. It is worth noting that, despite their relatively low accuracy compared to the best performing graph and word embeddings, the InferSent model still outperform the word2vec embeddings used in previous works. Furthermore, on the more challenging «hop-3» and ``all'' splits, InferSent tend to outperform graph embeddings. 
+
+\textbf{Graph embeddings.} Graph embeddings performed remarkably well on the hop-2 dataset. In particular, the TransE model with our proposed modifications outperformed the best performing word embedding model by an absolute 2.5\% in top-1 accuracy (13.49\% vs. 10.96\%). 
+
+The Poincarre embeddings are learned from the Wordnet hierarchy alone so that they do not embed explicit visual information such as object part attributes. It is remarkable that such embeddings performed on par with the best performing word embeddings. 
+
+ConvE embeddings performed poorly in contrast. This result seems to make sense: the ConvE model uses a non-linear similarity function which is not designed to learn linearly separable embeddings whereas the ESZSL module \cite{romera2015embarrassingly} we used as ZSL module uses a regularized bilinear form as similarity measure between visual and semantic features.
+
+The accuracy of graph embeddings tends to decrease dramatically with larger test splits. Visual classes of the hop-3 and all test splits have more distant shortest path to the training classes in the Wordnet knowledge graph. Hence, the graph embeddings of training and test classes within these split are likely to share less information which might explain this result. 
+
+\textbf{Data augmentation.} Wikipedia documents performed better than sentence embeddings which is encouraging. However, one major limitation of this approach is that many links between Wordnet concepts and Wikipedia articles could not be recovered from LOD data. Only 60\% of visual classes were successfully matched to a Wikipedia article. Hence, we manually recovered the missing links for the hop-2 set (623 missing classes), but we did not recover the missing links for classes of larger test splits as manual linking is very time consuming.
+
+Surprisingly, augmenting the Wordnet knowledge graph with Babelnet did not improve on the model's accuracy. The Babelnet knowledge graph is orders of magnitude larger than both Wordnet and standard SRL benchmarks against which knowledge graph embedding models are usually evaluated. This leads us to believe that models of greater capacity than the linear baselines we evaluated might be needed to extract more discriminative representations from such large knowledge bases. 
+
+\section{Conclusion \& Discussion}
+In this paper, we stressed out the importance of the semantic module on the accuracy of ZSL models. In particular, we showed that using better word embeddings with a simple baseline model is enough to outperform the state-of-the-art accuracy achieved by more sophisticated models. 
+
+More importantly, we discussed the relevance of word embeddings for ZSL and highlighted some limitations that lead us to believe that other levels of descriptions might be needed to achieve zero-shot recognition of generic objects. 
+
+We argued that, in addition to words, visual classes can be defined by text documents in natural language, which we referred to as document level descriptions, or by structured data as made available by large knowledge graphs, which we referred to as graph-level descriptions. 
+
+We showed that rich descriptions of visual concepts can be automatically scrapped from the web using linked open data and made this data openly available. We then reviewed the literature concerned with learning representations from such data and found that representations learned from explicit descriptions as made available by documents and knowledge graphs can indeed further outperform the best performing word embeddings on some zero-shot object recognition benchmark. 
+
+Architectures for the processing of graphs and documents are being actively researched. As research on graph and document embedding gains momentum, and given the limitations of word-level descriptions we outlined in Section 4, we expect semantic modules defined at the document and graph level to prove increasingly more efficient and we hope that the data we provide can prove useful for future research.
+
+Our work opens the way for interesting future research directions: In this paper, we restricted our investigation to semantic modules learned independently from the ZSL model. Extending the models we presented to a visually supervised setting represents one interesting direction. 
+
+Another interesting direction is to efficiently combine the semantic representations learned from different levels of descriptions. In particular, it would be interesting to combine the information of structured knowledge bases with that of word embeddings as both representations perform remarkably well while being of very different nature.

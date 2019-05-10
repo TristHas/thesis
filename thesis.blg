@@ -1,65 +1,107 @@
-This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: frontmatter/abstract.aux
 A level-1 auxiliary file: frontmatter/declaration.aux
 A level-1 auxiliary file: frontmatter/publications.aux
 A level-1 auxiliary file: frontmatter/glossary.aux
 A level-1 auxiliary file: Intro/introduction.aux
-A level-1 auxiliary file: Acoustic/Acoustic.aux
-A level-1 auxiliary file: NMF/NMF.aux
-A level-1 auxiliary file: Noise/Noise.aux
-A level-1 auxiliary file: AD/AD.aux
-A level-1 auxiliary file: Affine/AffineNMF.aux
-A level-1 auxiliary file: M2M/M2M.aux
-A level-1 auxiliary file: Conc/Conclusions.aux
+A level-1 auxiliary file: Benchmark/benchmark.aux
+A level-1 auxiliary file: Visuals/visuals.aux
+A level-1 auxiliary file: Semantics/semantics.aux
+A level-1 auxiliary file: Conc/conclusions.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: backmatter/appendix.aux
 A level-1 auxiliary file: frontmatter/acknowledgement.aux
 A level-1 auxiliary file: backmatter/citation.aux
 Database file #1: backmatter/thesis.bib
-Warning--there's a number but no volume in Hoyer04
-Warning--there's a number but no volume in Virtanen14
-You've used 103 entries,
+Repeated entry---line 539 of file backmatter/thesis.bib
+ : @inproceedings{frome2013devise
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 547 of file backmatter/thesis.bib
+ : @inproceedings{lampert2009learning
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 572 of file backmatter/thesis.bib
+ : @article{miller1995wordnet
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 583 of file backmatter/thesis.bib
+ : @article{norouzi2013zero
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 591 of file backmatter/thesis.bib
+ : @inproceedings{xian2016latent
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 599 of file backmatter/thesis.bib
+ : @inproceedings{romera2015embarrassingly
+ :                                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 607 of file backmatter/thesis.bib
+ : @inproceedings{changpinyo2016synthesized
+ :                                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 615 of file backmatter/thesis.bib
+ : @article{xian2017zero
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 673 of file backmatter/thesis.bib
+ : @inproceedings{socher2013zero
+ :                              ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for ""
+Warning--can't use both volume and number fields in larochelle2008zero
+Warning--empty journal in welinder2010caltech
+Warning--empty journal in norouzi2013zero
+Warning--empty year in norouzi2013zero
+Warning--empty journal in wah2011caltech
+Warning--empty journal in chamberlainneural
+Warning--empty year in chamberlainneural
+Warning--empty journal in de2018representation
+Warning--empty journal in yang2015embedding
+Warning--empty journal in dettmers2017convolutional
+Warning--empty institution in pagliardini2017unsupervised
+You've used 79 entries,
             1791 wiz_defined-function locations,
-            1054 strings with 21665 characters,
-and the built_in function-call counts, 27912 in all, are:
-= -- 2590
-> -- 1225
-< -- 41
-+ -- 446
-- -- 343
-* -- 1778
-:= -- 4221
-add.period$ -- 309
-call.type$ -- 103
-change.case$ -- 101
+            830 strings with 18461 characters,
+and the built_in function-call counts, 24433 in all, are:
+= -- 2250
+> -- 1058
+< -- 47
++ -- 380
+- -- 301
+* -- 1443
+:= -- 3446
+add.period$ -- 248
+call.type$ -- 79
+change.case$ -- 79
 chr.to.int$ -- 0
-cite$ -- 105
-duplicate$ -- 1300
-empty$ -- 2462
-format.name$ -- 343
-if$ -- 6432
+cite$ -- 90
+duplicate$ -- 1253
+empty$ -- 2294
+format.name$ -- 301
+if$ -- 5774
 int.to.chr$ -- 0
-int.to.str$ -- 103
-missing$ -- 105
-newline$ -- 518
-num.names$ -- 103
-pop$ -- 245
+int.to.str$ -- 79
+missing$ -- 79
+newline$ -- 396
+num.names$ -- 79
+pop$ -- 368
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 860
+skip$ -- 859
 stack$ -- 0
-substring$ -- 2167
-swap$ -- 501
-text.length$ -- 41
+substring$ -- 1764
+swap$ -- 554
+text.length$ -- 47
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 249
-width$ -- 106
-write$ -- 1112
-is.kanji.str$ -- 0
-(There were 2 warnings)
+warning$ -- 11
+while$ -- 223
+width$ -- 81
+write$ -- 849
+(There were 9 error messages)

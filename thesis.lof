@@ -1,8 +1,17 @@
-\select@language {english}
+\babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of the standard test splits configuration\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Distribution of the classification outputs of different ZSL models on the \textit {1-hop} test split. An image $x$ can be either be classified into its actual label $c$, the parent class of $c$, one of its children class, or an unrelated class. Only the latter case constitutes a definitive error. \relax }}{9}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Each dot in these figures represent the top-1 accuracy (y-axis) of a 100 classes test split with respect to the test split characteristics (x-axis): Left: Mean occurrence frequency of the test class labels. Right: test classes of primary meaning, such as cairn (monument), or secondary meaning, such as cairn (dog) \relax }}{10}{figure.caption.11}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration of polysemous words. Each color represents the 100 nearest neighbors of a given word. "Cairn" and its closest neighbors are clustered around the stone and monument related vocabulary, far away from dog-related vocabulary so we assign the top visual class as primary meaning of the word cairn.\relax }}{11}{figure.caption.12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces ZSL accuracy with respect to sample population sizes. Left: Distribution of Imagenet class population size. 6.1\% of Imagenet classes have less than 10 samples, 21.1\% have less than 100 samples. Right: ZSL accuracy of different test splits with respect to their mean sample population size. \relax }}{13}{figure.caption.13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Estimation of the impact of different factors on the reported error of existing models on the 1-hop test split \relax }}{14}{figure.caption.14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Illustration of the toy example. Left: Wordnet-like class hierarchy. Training classes are shown in red and test class in green. Right: Illustration of image samples. The black captions represent the distance between classes as their shortest path length. \relax }}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Illustration of local (one-hot, on the left) and distributed (right) representations of visual classes. The similarity-based solution encodes both training and test classes as local representations. Composition-based solutions need distributed representations. \relax }}{17}{figure.caption.16}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces ZSL accuracy on different test sets with respect to their structural ratio $R(C_{te})$. \relax }}{19}{figure.caption.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

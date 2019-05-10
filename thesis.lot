@@ -1,10 +1,18 @@
-\select@language {english}
+\babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Top-1 accuracy on the standard test splits (top) as reported for linear baselines in \cite {xian2017zero}, (middle) as reported for GCN-based models in \cite {kampffmeyer2018rethinking} and (down) obtained by our trivial solution\relax }}{18}{table.caption.17}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Evaluation on the proposed benchmark. Accuracy in the generalized ZSL setting are reported as harmonic means over training and test accuracy following \cite {xian2017zero}\relax }}{21}{table.caption.19}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Summary of architectures with different levels of reversibility\relax }}{48}{table.caption.20}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Training statistics on different hardware\relax }}{49}{table.caption.21}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Lemmas co-occurrence with visually discriminative words\relax }}{58}{table.caption.22}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Comparison of knowledge base statistics\relax }}{60}{table.caption.23}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Neural embedding scoring and loss functions\relax }}{62}{table.caption.24}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Results on the standard ImageNet ESZSL test splits.\relax }}{72}{table.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

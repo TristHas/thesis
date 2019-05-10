@@ -1,629 +1,484 @@
-\begin{thebibliography}{100}
+\begin{thebibliography}{10}
 
-\bibitem{Abe88}
-M.~Abe, S.~Nakamura, K.~Shikano, and H.~Kuwabara.
-\newblock Esophageal speech enhancement based on statistical voice conversion
-  with gaussian mixture models.
-\newblock {\em in Proc. ICASSP}, pages 655--658, 1988.
+\bibitem{xian2017zero}
+Yongqin Xian, Bernt Schiele, and Zeynep Akata.
+\newblock Zero-shot learning-the good, the bad and the ugly.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 4582--4591, 2017.
 
-\bibitem{Valbret92}
-H.~Valbret, E.~Moulines, and J.~P. Tubach.
-\newblock Voice transformation using {PSOLA} technique.
-\newblock {\em Speech Communication, vol. 11, no. 2-3, pp. 175-187}, 1992.
+\bibitem{kampffmeyer2018rethinking}
+Michael Kampffmeyer, Yinbo Chen, Xiaodan Liang, Hao Wang, Yujia Zhang, and
+  Eric~P Xing.
+\newblock Rethinking knowledge graph propagation for zero-shot learning.
+\newblock {\em arXiv preprint arXiv:1805.11724}, 2018.
 
-\bibitem{Stylianou98}
-Y.~Stylianou, O.~Cappe, and E.~Moulines.
-\newblock Continuous probabilistic transform for voice conversion.
-\newblock {\em IEEE Trans. Speech and Audio Processing}, 6(2):131--142, 1998.
+\bibitem{deng2009imagenet}
+Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li~Fei-Fei.
+\newblock Imagenet: A large-scale hierarchical image database.
+\newblock In {\em Computer Vision and Pattern Recognition, 2009. CVPR 2009.
+  IEEE Conference on}, pages 248--255. Ieee, 2009.
 
-\bibitem{Veaux11}
-C.~Veaux and X.~Robet.
-\newblock Intonation conversion from neutral to expressive speech.
-\newblock {\em in Proc. Interspeech}, pages 2765--2768, 2011.
+\bibitem{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1097--1105, 2012.
 
-\bibitem{Kawanami03}
-H.~Kawanami, Y.~Iwami, T.~Toda, and K.~Shikano.
-\newblock {GMM}-based voice conversion applied to emotional speech synthesis.
-\newblock {\em in Proc. EUROSPEECH}, 2003.
+\bibitem{lecun1998gradient}
+Yann LeCun, L{\'e}on Bottou, Yoshua Bengio, and Patrick Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324, 1998.
 
-\bibitem{Aihara12}
-R.~Aihara, R.~Takashima, T.~Takiguchi, and Y.~Ariki.
-\newblock {GMM}-based emotional voice conversion using spectrum and prosody
-  features.
-\newblock {\em American Journal of Signal Processing}, 2(5), 2012.
+\bibitem{larochelle2008zero}
+Hugo Larochelle, Dumitru Erhan, and Yoshua Bengio.
+\newblock Zero-data learning of new tasks.
+\newblock In {\em AAAI}, volume~1, page~3, 2008.
 
-\bibitem{Aihara14d}
-R.~Aihara, R.~Ueda, T.~Takiguchi, and Y.~Ariki.
-\newblock Exemplar-based emotional voice conversion using non-negative matrix
-  factorization.
-\newblock {\em in Proc. APSIPA}, 2014.
+\bibitem{frome2013devise}
+Andrea Frome, Greg~S Corrado, Jon Shlens, Samy Bengio, Jeff Dean, Tomas
+  Mikolov, et~al.
+\newblock Devise: A deep visual-semantic embedding model.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2121--2129, 2013.
 
-\bibitem{Nakamura12}
-K.~Nakamura, T.~Toda, H.~Saruwatari, and K.~Shikano.
-\newblock Speaking-aid systems using {GMM}-based voice conversion for
-  electrolaryngeal speech.
-\newblock {\em Speech Communication}, 54(1):134--146, 2012.
+\bibitem{lampert2009learning}
+Christoph~H Lampert, Hannes Nickisch, and Stefan Harmeling.
+\newblock Learning to detect unseen object classes by between-class attribute
+  transfer.
+\newblock In {\em Computer Vision and Pattern Recognition, 2009. CVPR 2009.
+  IEEE Conference on}, pages 951--958. IEEE, 2009.
 
-\bibitem{Kain98}
-A.~Kain and M.~W. Macon.
-\newblock Spectral voice conversion for text-to-speech synthesis.
-\newblock {\em in Proc. ICASSP, vol. 1, pp. 285-288}, 1998.
+\bibitem{patterson2012sun}
+Genevieve Patterson and James Hays.
+\newblock Sun attribute database: Discovering, annotating, and recognizing
+  scene attributes.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2012 IEEE
+  Conference on}, pages 2751--2758. IEEE, 2012.
 
-\bibitem{Nakamura14}
-K.~Nakamura, K.~Hashimoto, K.~Oura, Y.~Nankaku, and K.~Tokuda.
-\newblock A mel-cepstral analysis technique restoring high frequency components
-  from low-sampling-rate speech.
-\newblock {\em in Proc. Interspeech}, pages 2494--2498, 2014.
+\bibitem{welinder2010caltech}
+Peter Welinder, Steve Branson, Takeshi Mita, Catherine Wah, Florian Schroff,
+  Serge Belongie, and Pietro Perona.
+\newblock Caltech-ucsd birds 200.
+\newblock 2010.
 
-\bibitem{Ohtani14}
-Y.~Ohtani, M.~Tamura, M.~Morita, and M.~Akamine.
-\newblock {GMM}-based bandwidth extension using sub-band basis spectrum model.
-\newblock {\em in Proc. Interspeech}, pages 2489--2493, 2014.
+\bibitem{miller1995wordnet}
+George~A Miller.
+\newblock Wordnet: a lexical database for english.
+\newblock {\em Communications of the ACM}, 38(11):39--41, 1995.
 
-\bibitem{Moller00}
-S.~M{\"o}ller.
-\newblock {\em Assessment and prediction of speech quality in
-  telecommunications}.
-\newblock Springer, 2000.
+\bibitem{norouzi2013zero}
+Mohammad Norouzi, Tomas Mikolov, Samy Bengio, Yoram Singer, Jonathon Shlens,
+  Andrea Frome, Greg~S Corrado, and Jeffrey Dean.
+\newblock Zero-shot learning by convex combination of semantic embeddings.
 
-\bibitem{Lavner01}
-Y.~Lavner, J.~Rosenhouse, and I.~Gath.
-\newblock The prototype model in speaker identification by human listeners.
-\newblock {\em International Journal of Speech Technology}, 4(1):63--74, 2001.
+\bibitem{xian2016latent}
+Yongqin Xian, Zeynep Akata, Gaurav Sharma, Quynh Nguyen, Matthias Hein, and
+  Bernt Schiele.
+\newblock Latent embeddings for zero-shot classification.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 69--77, 2016.
 
-\bibitem{Helander07b}
-E.~Helander and J.~Nurminen.
-\newblock On the importance of pure prosody in the perception of speaker
-  identity.
-\newblock {\em in Proc. Interspeech}, pages 2665--2668, 2007.
+\bibitem{romera2015embarrassingly}
+Bernardino Romera-Paredes and Philip Torr.
+\newblock An embarrassingly simple approach to zero-shot learning.
+\newblock In {\em International Conference on Machine Learning}, pages
+  2152--2161, 2015.
 
-\bibitem{Chappell98}
-D.~T. Chappell and J.~Hansen.
-\newblock Speaker-specific pitch contour modeling and modification.
-\newblock {\em in Proc. ICASSP}, 2:885--888, 1998.
+\bibitem{changpinyo2016synthesized}
+Soravit Changpinyo, Wei-Lun Chao, Boqing Gong, and Fei Sha.
+\newblock Synthesized classifiers for zero-shot learning.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 5327--5336, 2016.
 
-\bibitem{Gillett03}
-B.~Gillett and S.~King.
-\newblock Transforming {F0} contours.
-\newblock {\em in Proc. EUROSPEECH}, 2003.
+\bibitem{wang2018zero}
+Xiaolong Wang, Yufei Ye, and Abhinav Gupta.
+\newblock Zero-shot recognition via semantic embeddings and knowledge graphs.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 6857--6866, 2018.
 
-\bibitem{Helander07}
-E.~Helander and J.~Nurminen.
-\newblock A novel method for prosody prediction in voice conversion.
-\newblock {\em in Proc. ICASSP}, 4:509--512, 2007.
+\bibitem{torralba2011unbiased}
+Antonio Torralba and Alexei~A Efros.
+\newblock Unbiased look at dataset bias.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2011 IEEE
+  Conference on}, pages 1521--1528. IEEE, 2011.
 
-\bibitem{Muller07}
-M.~M{\"u}ller.
-\newblock {\em Information retrieval for music and motion}, volume~6.
-\newblock Springer, 2007.
+\bibitem{jabri2016revisiting}
+Allan Jabri, Armand Joulin, and Laurens van~der Maaten.
+\newblock Revisiting visual question answering baselines.
+\newblock In {\em European conference on computer vision}, pages 727--739.
+  Springer, 2016.
 
-\bibitem{Toda07}
-T.~Toda, A.~Black, and K.~Tokuda.
-\newblock Voice conversion based on maximum likelihood estimation of spectral
-  parameter trajectory.
-\newblock {\em IEEE Trans. Audio, Speech, Lang. Process.}, 15(8):2222--2235,
-  2007.
+\bibitem{kafle2017analysis}
+Kushal Kafle and Christopher Kanan.
+\newblock An analysis of visual question answering algorithms.
+\newblock In {\em Computer Vision (ICCV), 2017 IEEE International Conference
+  on}, pages 1983--1991. IEEE, 2017.
 
-\bibitem{Ling-Hui13}
-C.~Ling-Hui, L.~Zhen-Hua, S.~Yan, and D.~Li-Rong.
-\newblock Joint spectral distribution modeling using restricted boltzmann
-  machines for voice conversion.
-\newblock {\em in Proc. Interspeech}, pages 3052---3056, 2013.
+\bibitem{johnson2017clevr}
+Justin Johnson, Bharath Hariharan, Laurens van~der Maaten, Li~Fei-Fei,
+  C~Lawrence Zitnick, and Ross Girshick.
+\newblock Clevr: A diagnostic dataset for compositional language and elementary
+  visual reasoning.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2017 IEEE
+  Conference on}, pages 1988--1997. IEEE, 2017.
 
-\bibitem{Nakashika14}
-T.~Nakashika.
-\newblock Voice conversion based on deep learning.
-\newblock {\em Doctral Thesis}, 2014.
+\bibitem{socher2013zero}
+Richard Socher, Milind Ganjoo, Christopher~D Manning, and Andrew Ng.
+\newblock Zero-shot learning through cross-modal transfer.
+\newblock In {\em Advances in neural information processing systems}, pages
+  935--943, 2013.
 
-\bibitem{Nakashika15}
-T.~Nakashika, T.~Takiguchi, and Y.~Ariki.
-\newblock Voice conversion using {RNN} pre-trained by recurrent temporal
-  restricted {B}oltzmann machines.
-\newblock {\em IEEE/ACM Transactions on Audio, Speech and Language Processing},
-  23(3):580--587, 2015.
+\bibitem{jacob2018quantization}
+Benoit Jacob, Skirmantas Kligys, Bo~Chen, Menglong Zhu, Matthew Tang, Andrew
+  Howard, Hartwig Adam, and Dmitry Kalenichenko.
+\newblock Quantization and training of neural networks for efficient
+  integer-arithmetic-only inference.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 2704--2713, 2018.
 
-\bibitem{Takashima12}
-R.~Takashima, T.~Takiguchi, and Y.~Ariki.
-\newblock Exemplar-based voice conversion in noisy environment.
-\newblock {\em in Proc. SLT}, pages 313--317, 2012.
+\bibitem{molchanov2016pruning}
+Pavlo Molchanov, Stephen Tyree, Tero Karras, Timo Aila, and Jan Kautz.
+\newblock Pruning convolutional neural networks for resource efficient
+  inference.
+\newblock {\em arXiv preprint arXiv:1611.06440}, 2016.
 
-\bibitem{Wu14}
-Z.~Wu, T.~Virtanen, E.~S. Chng, and H.~Li.
-\newblock Exemplar-based sparse representation with residual compensation for
-  voice conversion.
-\newblock {\em IEEE Trans. Audio, Speech, Lang. Process.}, 22(10):1506--1521,
+\bibitem{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{shallue2018measuring}
+Christopher~J Shallue, Jaehoon Lee, Joe Antognini, Jascha Sohl-Dickstein, Roy
+  Frostig, and George~E Dahl.
+\newblock Measuring the effects of data parallelism on neural network training.
+\newblock {\em arXiv preprint arXiv:1811.03600}, 2018.
+
+\bibitem{largebatch}
+Sam McCandlish, Jared Kaplan, Dario Amodei, and OpenAI Dota~Team.
+\newblock An empirical model of large-batch training.
+\newblock {\em arXiv preprint arXiv:1812.06162}, 2018.
+
+\bibitem{gomez2017reversible}
+Aidan~N Gomez, Mengye Ren, Raquel Urtasun, and Roger~B Grosse.
+\newblock The reversible residual network: Backpropagation without storing
+  activations.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  2214--2224, 2017.
+
+\bibitem{jacobsen2018revnet}
+J{\"o}rn-Henrik Jacobsen, Arnold Smeulders, and Edouard Oyallon.
+\newblock i-revnet: Deep invertible networks.
+\newblock {\em arXiv preprint arXiv:1802.07088}, 2018.
+
+\bibitem{dinh2014nice}
+Laurent Dinh, David Krueger, and Yoshua Bengio.
+\newblock Nice: Non-linear independent components estimation.
+\newblock {\em arXiv preprint arXiv:1410.8516}, 2014.
+
+\bibitem{dinh2016density}
+Laurent Dinh, Jascha Sohl-Dickstein, and Samy Bengio.
+\newblock Density estimation using real nvp.
+\newblock {\em arXiv preprint arXiv:1605.08803}, 2016.
+
+\bibitem{kingma2018glow}
+Durk~P Kingma and Prafulla Dhariwal.
+\newblock Glow: Generative flow with invertible 1x1 convolutions.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  10215--10224, 2018.
+
+\bibitem{rezende2015variational}
+Danilo~Jimenez Rezende and Shakir Mohamed.
+\newblock Variational inference with normalizing flows.
+\newblock {\em arXiv preprint arXiv:1505.05770}, 2015.
+
+\bibitem{chen2018neural}
+Tian~Qi Chen, Yulia Rubanova, Jesse Bettencourt, and David~K Duvenaud.
+\newblock Neural ordinary differential equations.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  6571--6583, 2018.
+
+\bibitem{jacobsen2018excessive}
+J{\"o}rn-Henrik Jacobsen, Jens Behrmann, Richard Zemel, and Matthias Bethge.
+\newblock Excessive invariance causes adversarial vulnerability.
+\newblock {\em arXiv preprint arXiv:1811.00401}, 2018.
+
+\bibitem{behrmann2018invertible}
+Jens Behrmann, David Duvenaud, and J{\"o}rn-Henrik Jacobsen.
+\newblock Invertible residual networks.
+\newblock {\em arXiv preprint arXiv:1811.00995}, 2018.
+
+\bibitem{rota2018place}
+Samuel Rota~Bul{\`o}, Lorenzo Porzi, and Peter Kontschieder.
+\newblock In-place activated batchnorm for memory-optimized training of dnns.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 5639--5647, 2018.
+
+\bibitem{iandola2016squeezenet}
+Forrest~N Iandola, Song Han, Matthew~W Moskewicz, Khalid Ashraf, William~J
+  Dally, and Kurt Keutzer.
+\newblock Squeezenet: Alexnet-level accuracy with 50x fewer parameters and< 0.5
+  mb model size.
+\newblock {\em arXiv preprint arXiv:1602.07360}, 2016.
+
+\bibitem{howard2017mobilenets}
+Andrew~G Howard, Menglong Zhu, Bo~Chen, Dmitry Kalenichenko, Weijun Wang,
+  Tobias Weyand, Marco Andreetto, and Hartwig Adam.
+\newblock Mobilenets: Efficient convolutional neural networks for mobile vision
+  applications.
+\newblock {\em arXiv preprint arXiv:1704.04861}, 2017.
+
+\bibitem{frankle2018lottery}
+Jonathan Frankle and Michael Carbin.
+\newblock The lottery ticket hypothesis: Finding sparse, trainable neural
+  networks.
+\newblock {\em arXiv preprint arXiv:1803.03635}, 2018.
+
+\bibitem{micikevicius2017mixed}
+Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory Diamos, Erich Elsen,
+  David Garcia, Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh
+  Venkatesh, et~al.
+\newblock Mixed precision training.
+\newblock {\em arXiv preprint arXiv:1710.03740}, 2017.
+
+\bibitem{wu2018training}
+Shuang Wu, Guoqi Li, Feng Chen, and Luping Shi.
+\newblock Training and inference with integers in deep neural networks.
+\newblock {\em arXiv preprint arXiv:1802.04680}, 2018.
+
+\bibitem{martens2012training}
+James Martens and Ilya Sutskever.
+\newblock Training deep and recurrent networks with hessian-free optimization.
+\newblock In {\em Neural networks: Tricks of the trade}, pages 479--535.
+  Springer, 2012.
+
+\bibitem{chen2016training}
+Tianqi Chen, Bing Xu, Chiyuan Zhang, and Carlos Guestrin.
+\newblock Training deep nets with sublinear memory cost.
+\newblock {\em arXiv preprint arXiv:1604.06174}, 2016.
+
+\bibitem{smith2017super}
+Leslie~N Smith and Nicholay Topin.
+\newblock Super-convergence: Very fast training of neural networks using large
+  learning rates.
+\newblock {\em arXiv preprint arXiv:1708.07120}, 2017.
+
+\bibitem{wah2011caltech}
+Catherine Wah, Steve Branson, Peter Welinder, Pietro Perona, and Serge
+  Belongie.
+\newblock The caltech-ucsd birds-200-2011 dataset.
+\newblock 2011.
+
+\bibitem{kodirov2017semantic}
+Elyor Kodirov, Tao Xiang, and Shaogang Gong.
+\newblock Semantic autoencoder for zero-shot learning.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 3174--3183, 2017.
+
+\bibitem{pennington2014glove}
+Jeffrey Pennington, Richard Socher, and Christopher Manning.
+\newblock Glove: Global vectors for word representation.
+\newblock In {\em Proceedings of the 2014 conference on empirical methods in
+  natural language processing (EMNLP)}, pages 1532--1543, 2014.
+
+\bibitem{mikolov2013distributed}
+Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg~S Corrado, and Jeff Dean.
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3111--3119, 2013.
+
+\bibitem{nickel2017poincare}
+Maximillian Nickel and Douwe Kiela.
+\newblock Poincar{\'e} embeddings for learning hierarchical representations.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  6341--6350, 2017.
+
+\bibitem{rohrbach2010helps}
+Marcus Rohrbach, Michael Stark, Gy{\"o}rgy Szarvas, Iryna Gurevych, and Bernt
+  Schiele.
+\newblock What helps where--and why? semantic relatedness for knowledge
+  transfer.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2010 IEEE
+  Conference on}, pages 910--917. IEEE, 2010.
+
+\bibitem{mensink2014costa}
+Thomas Mensink, Efstratios Gavves, and Cees~GM Snoek.
+\newblock Costa: Co-occurrence statistics for zero-shot classification.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2014 IEEE
+  Conference on}, pages 2441--2448. IEEE, 2014.
+
+\bibitem{mukherjee2016gaussian}
+Tanmoy Mukherjee and Timothy Hospedales.
+\newblock Gaussian visual-linguistic embedding for zero-shot recognition.
+\newblock In {\em Proceedings of the 2016 Conference on Empirical Methods in
+  Natural Language Processing}, pages 912--918, 2016.
+
+\bibitem{wang2017alternative}
+Qian Wang and Ke~Chen.
+\newblock Alternative semantic representations for zero-shot human action
+  recognition.
+\newblock In {\em Joint European Conference on Machine Learning and Knowledge
+  Discovery in Databases}, pages 87--102. Springer, 2017.
+
+\bibitem{akata2015evaluation}
+Zeynep Akata, Scott Reed, Daniel Walter, Honglak Lee, and Bernt Schiele.
+\newblock Evaluation of output embeddings for fine-grained image
+  classification.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2015 IEEE
+  Conference on}, pages 2927--2936. IEEE, 2015.
+
+\bibitem{akata2016label}
+Zeynep Akata, Florent Perronnin, Zaid Harchaoui, and Cordelia Schmid.
+\newblock Label-embedding for image classification.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  38(7):1425--1438, 2016.
+
+\bibitem{levy2014neural}
+Omer Levy and Yoav Goldberg.
+\newblock Neural word embedding as implicit matrix factorization.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2177--2185, 2014.
+
+\bibitem{baroni2014don}
+Marco Baroni, Georgiana Dinu, and Germ{\'a}n Kruszewski.
+\newblock Don't count, predict! a systematic comparison of context-counting vs.
+  context-predicting semantic vectors.
+\newblock In {\em Proceedings of the 52nd Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, volume~1, pages 238--247,
   2014.
 
-\bibitem{Lee01}
-D.~D. Lee and H.~S. Seung.
-\newblock Algorithms for non-negative matrix factorization.
-\newblock {\em Neural Information Processing System}, pages 556--562, 2001.
-
-\bibitem{Takashima13}
-R.~Takashima, T.~Takiguchi, and Y.~Ariki.
-\newblock Exemplar-based voice conversion using sparse representation in noisy
-  environments.
-\newblock {\em IEICE Transactions on Fundamentals of Electronics,
-  Communications and Computer Sciences}, E96-A(10):1946--1953, 2013.
-
-\bibitem{Aihara14b}
-R.~Aihara, T.~Nakashika, T.~Takiguchi, and Y.~Ariki.
-\newblock Voice conversion based on non-negative matrix factorization using
-  phoneme-categorized dictionary.
-\newblock {\em in Proc. ICASSP}, pages 7944--7948, 2014.
-
-\bibitem{Helander10}
-E.~Helander, T.~Virtanen, J.~Nurminen, and M.~Gabbouj.
-\newblock Voice conversion using partial least squares regression.
-\newblock {\em IEEE Trans. Audio, Speech, Lang. Process., vol. 18, Issue:5,
-  pp.~912-921}, 2010.
-
-\bibitem{Bogert63}
-B.~P. Bogert, M.~Healy, and J.~W. Tukey.
-\newblock The quefrency alanysis of time series for echoes: Cepstrum,
-  pseudo-autocovariance, cross-cepstrum and saphe cracking.
-\newblock {\em in Proc. the symposium on time series analysis}, 15:209--243,
-  1963.
-
-\bibitem{Mermelstein76}
-P.~Mermelstein.
-\newblock Distance measures for speech recognition, psychological and
-  instrumental.
-\newblock {\em Pattern recognition and artificial intelligence}, 116:374--388,
-  1976.
-
-\bibitem{Milner02}
-B.~Milner and X.~Shao.
-\newblock Speech reconstruction from mel-frequency cepstral coefficients using
-  a source-filter model.
-\newblock {\em in Proc. Interspeech}, pages 2421--2424, 2002.
-
-\bibitem{Tychtl99}
-Z.~Tychtl and J.~Psutka.
-\newblock Speech production based on the mel-frequency cepstral coefficients.
-\newblock {\em in Proc. EUROSPEECH}, 99:2335--2338, 1999.
-
-\bibitem{Ramabadran01}
-T.~Ramabadran, J.~Meunier, M.~Jasiuk, and B.~Kushner.
-\newblock Enhancing distributed speech recognition with back-end speech
-  reconstruction.
-\newblock {\em in Proc. Interspeech}, pages 1859--1862, 2001.
-
-\bibitem{Imai83}
-S.~Imai.
-\newblock Cepstral analysis synthesis on the mel frequency scale.
-\newblock {\em in Proc. ICASSP}, 8:93--96, 1983.
-
-\bibitem{Kawahara99}
-H.~Kawahara, I.~Masuda-Katsuse, and A.de Cheveigne.
-\newblock Restructuring speech representations using a pitch-adaptive
-  time-frequency smoothing and an instantaneous-frequencybased {F0} extraction:
-  possible role of a repetitive structure in sounds.
-\newblock {\em Speech Communication}, 27(3-4):187--207, 1999.
-
-\bibitem{Kawahara06}
-H.~Kawahara.
-\newblock {STRAIGHT}, exploitation of the other aspect of vocoder: Perceptually
-  isomorphic decomposition of speech sounds.
-\newblock {\em Acoustical Science and Technology}, 27(6):349--353, 2006.
-
-\bibitem{Kawahara08}
-H.~Kawahara, M.~Morise, T.~Takahashi, R.~Nisimura, T.~Irino, and H.~Banno.
-\newblock {TANDEM-STRAIGHT}: A temporally stable power spectral representation
-  for periodic signals and applications to interference-free spectrum, f0, and
-  aperiodicity estimation.
-\newblock {\em in Proc. ICASSP}, pages 3933--3936, 2008.
-
-\bibitem{Morise16}
-M.~Morise, F.~Yokomori, and K.~Ozawa.
-\newblock World: a vocoder-based high-quality speech synthesis system for
-  real-time applications.
-\newblock {\em IEICE transactions on information and systems},
-  E99-D(7):1877--1884, 2016.
-
-\bibitem{Erro14}
-D.~Erro, I.~Sainz, E.~Navas, and I.~Hernaez.
-\newblock Harmonics plus noise model based vocoder for statistical parametric
-  speech synthesis.
-\newblock {\em IEEE J. Sel. Topics in Signal Process.}, 8(2):184--194, 2014.
-
-\bibitem{Toth07}
-A.~R. Toth and A.~W. Black.
-\newblock Using articulatory position data in voice transformation.
-\newblock {\em in Proc. ISCA SSW6}, pages 182--187, 2007.
-
-\bibitem{Dempster77}
-A.~P. Dempster, N.~M. Laird, and D.~B. Rubin.
-\newblock Maximum likelihood from incomplete data via the em algorithm.
-\newblock {\em Journal of the Royal statistical Society}, 39(1):1--38, 1977.
-
-\bibitem{Tokuda00}
-K.~Tokuda, T.~Yoshimura, T.~Masuko, T.~Kobayashi, and T.~Kitamura.
-\newblock Speech parameter generation algorithms for hmm-based speech
-  synthesis.
-\newblock {\em in Proc. ICASSP}, pages 1315--1318, 2000.
-
-\bibitem{Takamichi15}
-S.~Takamichi, T.~Toda, A.~W. Black, and S.~Nakamura.
-\newblock Modulation spectrum-constrained trajectory training for gmm-based
-  voice conversion.
-\newblock {\em in Proc. ICASSP}, pages 4859--4863, 2015.
-
-\bibitem{Jong93}
-S.~de~Jong.
-\newblock {SIMPLS}: An alternative approach to partial least squares
-  regression.
-\newblock {\em Chemometrics Intell. Lab. Syst}, 18(3):251--263, 1993.
-
-\bibitem{Helander12}
-E~Helander, H~Sil{\'e}n, T~Virtanen, and M~Gabbouj.
-\newblock Voice conversion using dynamic kernel partial least squares
-  regression.
-\newblock {\em IEEE transactions on audio, speech, and language processing},
-  20(3):806--817, 2012.
-
-\bibitem{Fevotte11}
-C.~F{\'e}votte and J.~Idier.
-\newblock Algorithms for nonnegative matrix factorization with the
-  beta-divergence.
-\newblock {\em Neural Computation}, 23(9):2421--2456, 2011.
-
-\bibitem{Gemmeke11}
-J.~F. Gemmeke, T.~Virtanen, and A.~Hurmalainen.
-\newblock Exemplar-based sparse representations for noise robust automatic
-  speech recognition.
-\newblock {\em IEEE Trans. Audio, Speech, Lang. Process.}, 19(7):2067--2080,
-  2011.
-
-\bibitem{Hoyer04}
-P.~O. Hoyer.
-\newblock Non-negative matrix factorization with sparseness constraint.
-\newblock {\em Journal of Machine Learning Research}, (5):1457--1469, 2004.
-
-\bibitem{Kim12}
-J.~Kim, R.~D.~C. Monteiro, and H.~Park.
-\newblock Group sparsity in nonnegative matrix factorization.
-\newblock {\em in Proc. the SIAM International Conference on Data Mining},
-  pages 851--862, 2012.
-
-\bibitem{Sun14}
-D.~L. Sun and C.~F{\'e}votte.
-\newblock Alternating direction method of multipliers for non-negative matrix
-  factorization with the beta-divergence.
-\newblock {\em in Proc. ICASSP}, pages 6242--6246, 2014.
-
-\bibitem{Virtanen14}
-T.~Virtanen, B.~Raj, J.~F. Gemmeke, and H.~Van hamme.
-\newblock Active-set newton algorithm for non-negative sparse coding of audio.
-\newblock {\em in Proc. ICASSP}, (3116--3120), 2014.
-
-\bibitem{Gemmeke10}
-J.~F. Gemmeke and T.~Virtanen.
-\newblock Noise robust exemplar-based connected digit recognition.
-\newblock {\em in Proc. ICASSP}, pages 4546--4549, 2010.
-
-\bibitem{Schmidt06}
-M.~N. Schmidt and R.~K. Olsson.
-\newblock Single-channel speech separation using sparse non-negative matrix
-  factorization.
-\newblock {\em in Proc. Interspeech}, pages 2614--2617, 2006.
-
-\bibitem{Virtanen07}
-T.~Virtanen.
-\newblock Monaural sound source separation by non-negative matrix factorization
-  with temporal continuity and sparseness criteria.
-\newblock {\em IEEE Trans. Audio, Speech, Lang. Process.}, 15(3):1066--1074,
-  2007.
-
-\bibitem{Sawada12}
-H.~Sawada, H.~Kameoka, S.~Araki, and N.~Ueda.
-\newblock Efficient algorithms for multichannel extensions of itakura-saito
-  nonnegative matrix factorization.
-\newblock {\em in Proc. ICASSP}, pages 261--264, 2012.
-
-\bibitem{Fevotte09}
-C.~F{\'e}votte, N.~Bertin, and J.~L. Durrieu.
-\newblock Nonnegative matrix factorization with the {I}takura-{S}aito
-  divergence with application to music analysis.
-\newblock {\em Neural Computation}, 21(3):793--830, 2009.
-
-\bibitem{Cichocki09}
-A.~Cichocki, R.~Zdnek, A.~H. Phan, and S.~Amari.
-\newblock {\em Nonnegative Matrix and Tensor Factorizations: Applications to
-  Exploratory Multi-way Data Analysis and Blind Source Separation}.
-\newblock WILKEY, 2009.
-
-\bibitem{Barker13}
-T.~Barker and T.~Virtanen.
-\newblock Non-negative tensor factorisation of modulation spectrograms for
-  monaural sound source separation.
-\newblock {\em in Proc. Interspeech}, pages 827--831, 2013.
-
-\bibitem{Aihara14c}
-R.~Aihara, R.~Takashima, T.~Takiguchi, and Y.~Ariki.
-\newblock Noise-robust voice conversion based on sparse spectral mapping using
-  non-negative matrix factorization.
-\newblock {\em IEICE Transactions on Information and Systems},
-  E97-D(6):1411--1418, 2014.
-
-\bibitem{Schuller10}
-Bjorn Schuller, Felix Weninger, Martin Wollmer, Yang Sun, and Gerhard Rigoll.
-\newblock Non-negative matrix factorization as noise-robust feature extractor
-  for speech recognition.
-\newblock {\em in Proc. ICASSP}, 2010.
-
-\bibitem{Kurematsu90}
-A.~Kurematsu, K.~Takeda, Y.~Sagisaka, S.~Katagiri, H.~Kuwabara, and K.~Shikano.
-\newblock {ATR} {Japanese} speech database as a tool of speech recognition and
-  synthesis.
-\newblock {\em Speech Communication}, 9:357--363, 1990.
-
-\bibitem{Kitaoka09}
-N.~Kitaoka, T.~Yamada, S.~Tsuge, C.~Miyajima, K.~Yamamoto, T.~Nishiura,
-  M.~Nakayama, Y.~Denda, M.~Fujimoto, T.~Takiguchi, S.~Tamura, S.~Matsuda,
-  T.~Ogawa, S.~Kuroiwa, K.~Takeda, and S.~Nakamura.
-\newblock {CENSREC-1-C}: An evaluation framework for voice activity detection
-  under noisy environments.
-\newblock {\em Acoustical Science and Technology}, 30 (2009)(5):363--371, 2009.
-
-\bibitem{ITU03}
-{INTERNATIONAL TELECOMMUNICATION UNION}.
-\newblock Methods for objective and subjective assessment of quality.
-\newblock {\em ITU-T Recommendation P.800}, 2003.
-
-\bibitem{Masaka14}
-K.~Masaka, R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Multimodal exemplar-based voice conversion using lip features in
-  noisy environments.
-\newblock {\em in Proc. Interspeech}, 1159-1163, 2014.
-
-\bibitem{Wu13}
-Z.~Wu, T.~Virtanen, T.~Kinnunen, E.~S. Chng, and H.~Li.
-\newblock Exemplar-based voice conversion using non-negative spectrogram
-  deconvolution.
-\newblock {\em in Proc. SSW8}, 2013.
-
-\bibitem{Aihara13}
-R.~Aihara, R.~Takashima, T.~Takiguchi, and Y.~Ariki.
-\newblock Individuality-preserving voice conversion for articulation disorders
-  based on {N}on-negative {M}atrix {F}actorization.
-\newblock {\em in Proc. ICASSP}, pages 8037--8040, 2013.
-
-\bibitem{Aihara14}
-R.~Aihara, R.~Takashima, T.~Takiguchi, and Y.~Ariki.
-\newblock A preliminary demonstration of exemplar-based voice conversion for
-  articulation disorders using an individuality-preserving dictionary.
-\newblock {\em EURASIP Journal on Audio, Speech, and Music Processing}, 2014:5,
-  doi:10.1186/1687-4722-2014-5, 2014.
-
-\bibitem{Aihara15d}
-R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Individuality-preserving voice conversion for articulation disorders
-  using phoneme-categorized exemplars.
-\newblock {\em ACM Transactions on Accessible Computing (TACCESS)},
-  6(4):13:1--13:17, 2015.
-
-\bibitem{Hohhegaard13}
-M.~V. Hollegaard, K.~Skogstrand, P.~Thorsen, B.~Norgaard-Pedersen, D.~M.
-  Hougaard, and J.~Grove.
-\newblock Joint analysis of {SNP}s and proteins identifies regulatory {IL}18
-  gene variations decreasing the chance of spastic cerebral palsy.
-\newblock {\em Human Mutation, Vol. 34}, pages 143--148, 2013.
-
-\bibitem{Canale02}
-S.~T. Canale and W.~C. Campbell.
-\newblock Campbell's operative orthopaedics.
-\newblock Technical report, Mosby-Year Book, 2002.
-
-\bibitem{Matsumasa09}
-H.~Matsumasa, T.~Takiguchi, Y.~Ariki, I.~Li, and T.~Nakabayachi.
-\newblock Integration of metamodel and acoustic model for dysarthric speech
-  recognition.
-\newblock {\em Journal of Multimedia, Volume 4, Issue 4, pp. 254-261}, 2009.
-
-\bibitem{Miyamoto10}
-C.~Miyamoto, Y.~Komai, T.~Takiguchi, Y.~Ariki, and I.~Li.
-\newblock Multimodal speech recognition of a person with articulation disorders
-  using {AAM} and {MAF}.
-\newblock {\em in Proc. IEEE International Workshop on Multimedia Signal
-  Processing (MMSP'10)}, pages 517--520, 2010.
-
-\bibitem{Lin02}
-J.~Lin, W.~Ying, and T.~S. Huang.
-\newblock Capturing human hand motion in image sequences.
-\newblock {\em in Proc. IEEE Motion and Video Computing Workshop}, pages
-  99--104, 2002.
-
-\bibitem{Starner98}
-T.~Starner, J.~Weaver, and A.~Pentland.
-\newblock Real-time {American} sign language recognition using desk and
-  wearable computer based video.
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence,
-  20(12), pp. 1371-1375}, 1998.
-
-\bibitem{Fang03}
-G.~Fang, W.~Gao, and D.~Zhao.
-\newblock Large vocabulary sign language recognition based on hierarchical
-  decision trees.
-\newblock {\em in Proc. 5th International Conference on Multimodal Interfaces},
-  pages 125--131, 2003.
-
-\bibitem{Ezaki04}
-N.~Ezaki, M.~Bulacu, and L.~Schomaker.
-\newblock Text detection from natural scene images: Towards a system for
-  visually impaired persons.
-\newblock {\em in Proc. ICPR}, pages 683--686, 2004.
-
-\bibitem{Bashar03}
-M.~K. Bashar, T.~Matsumoto, Y.~Takeuchi, H.~Kudo, and N.~Ohnishi.
-\newblock Unsupervised texture segmentation via wavelet-based locally orderless
-  images (wlois) and {SOM}.
-\newblock {\em in Proc. 6th {IASTED} International Conference {COMPUTER
-  GRAPHICS AND IMAGING}}, 2003.
-
-\bibitem{Wu99}
-V.~Wu, R.~Manmatha, and E.~M. Riseman.
-\newblock Textfinder: an automatic system to detect and recognize text in
-  images.
-\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence,
-  21(11), pp. 1224-1229}, 1999.
-
-\bibitem{Yabu06}
-K.~Yabu, T.~Ifukube, and S.~Aomura.
-\newblock A basic design of wearable speech synthesizer for voice disorders
-  [japanese].
-\newblock {\em EIC Technical Report (Institute of Electronics, Information and
-  Communication Engineers)}, 105(686):59--64, 2006.
-
-\bibitem{Nakamura06}
-K.~Nakamura, T.~Toda, H.~Saruwatari, and K.~Shikano.
-\newblock Speaking aid system for total laryngectomees using voice conversion
-  of body transmitted artificial speech.
-\newblock {\em in Proc. Interspeech}, pages 148--151, 2006.
-
-\bibitem{Veaux12}
-C.~Veaux, J.~Yamagishi, and S.~King.
-\newblock Using {HMM}-based speech synthesis to reconstruct the voice of
-  individuals with degenerative speech disorders.
-\newblock {\em in Proc. Interspeech}, 2012.
-
-\bibitem{Yamagishi13}
-J.~Yamagishi, Christophe Veaux, Simon King, and Steve Renals.
-\newblock Speech synthesis technologies for individuals with vocal
-  disabilities: {V}oice banking and reconstruction.
-\newblock {\em Acoustical Science and Technology, Vol. 33 (2012) No. 1}, pages
-  1--5, 2013.
-
-\bibitem{Maier10}
-A.~Maier, T.~Haderlein, F.~Stelzle, E.~Noth, E.~Nkenke, F.~Rosanowski,
-  A.~Schutzenberger, and M.~Schuster.
-\newblock Automatic speech recognition systems for the evaluation of voice and
-  speech disorders in head and neck cancer.
-\newblock {\em EURASIP Journal on Audio, Speech, and Music Processing}, 2010.
-
-\bibitem{Aihara15g}
-R.~Aihara, Y.~Takashima, T.~Takiguchi, and Y.~Ariki.
-\newblock Home appliance control using speech recognition for a person with an
-  articulation disorder.
-\newblock {\em in Proc. The 17th International Symposium on Applied
-  Electromagnetics and Mechanics (ISEM2015)}, 2015.
-
-\bibitem{Aihara15f}
-R.~Aihara, T.~Fujii, T.~Nakashika, T.~Takiguchi, and Y.~Ariki.
-\newblock Noise-robust voice conversion using a small parallel data based on
-  non-negative matrix factorization.
-\newblock {\em in Proc. The 23rd European Signal Processing Conference
-  (EUSIPCO)}, pages 315--319, 2015.
-
-\bibitem{AIhara15e}
-R.~Aihara, T.~Fujii, T.~Nakashika, T.~Takiguchi, and Y.~Ariki.
-\newblock Small-parallel exemplar-based voice conversion in noisy environments
-  using affine non-negative matrix factorization.
-\newblock {\em EURASIP Journal on Audio, Speech, and Music Processing,
-  doi:10.1186/s13636-015-0075-4}, 2015.
-
-\bibitem{Lee06}
-C.~H. Lee and C.~H. Wu.
-\newblock {MAP}-based adaptation for speech conversion using adaptation data
-  selection and non-parallel training.
-\newblock {\em in Proc. Interspeech}, pages 2254--2257, 2006.
-
-\bibitem{Mouchtaris06}
-A.~Mouchtaris, J.~Van der Spiegel, and P.~Mueller.
-\newblock Nonparallel training for voice conversion based on a parameter
-  adaptation approach.
-\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
-  14(3):952--963, 2006.
-
-\bibitem{Toda06}
-T.~Toda, Y.~Ohtani, and K.~Shikano.
-\newblock Eigenvoice conversion based on {G}aussian mixture model.
-\newblock {\em in Proc. Interspeech}, pages 2446--2449, 2006.
-
-\bibitem{Saito11}
-D.~Saito, K.~Yamamoto, N.~Minematsu, and K.~Hirose.
-\newblock One-to-many voice conversion based on tensor representation of
-  speaker space.
-\newblock {\em in Proc. Interspeech}, pages 653--656, 2011.
-
-\bibitem{Grais11}
-E.~M. Grais and H.~Erdogan.
-\newblock Adaptation of speaker-specic bases in non-negative matrix
-  factorization for single channel speech-music separation.
-\newblock {\em in Proc. Interspeech}, pages 569--572, 2011.
-
-\bibitem{Kawahara03}
-H.~Kawahara and H.~Matsui.
-\newblock Auditory morphing based on an elastic perceptual distance metric in
-  an interference-free time-frequency representation.
-\newblock {\em in Proc. ICASSP}, I:256--259, 2003.
-
-\bibitem{En-Najjary04}
-T.~En-Najjary, O.~Roec, and T.~Chonavel.
-\newblock A voice conversion method based on joint pitch and spectral envelope
-  transformation.
-\newblock {\em in Proc. ICSLP}, pages 199--203, 2004.
-
-\bibitem{Aihara15b}
-R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Many-to-many voice conversion based on multiple non-negative matrix
-  factorization.
-\newblock {\em in Proc. Interspeech}, pages 2749--2753, 2015.
-
-\bibitem{Aihara15c}
-R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Many-to-one voice conversion using exemplar-based sparse
-  representation.
-\newblock {\em in Proc. IEEE Workshop on Applications of Signal Processing to
-  Audio and Acoustics}, 2015.
-
-\bibitem{Aihara16c}
-R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Multiple non-negative matrix factorization for many-to-many voice
-  conversion.
-\newblock {\em IEEE/ACM Trans. on Audio, Speech, and Language Processing},
-  24(7):1175--1184, 2016.
-
-\bibitem{Ohtani09}
-Y.~Ohtani, T.~Toda, H.~Saruwatari, and K.~Shikano.
-\newblock Many-to-many eigenvoice conversion with reference voice.
-\newblock {\em in Proc. Interspeech}, pages 1623--1626, 2009.
-
-\bibitem{Masuda07}
-T.~Masuda and M.~Shozakai.
-\newblock Cost reduction of training mapping function based on multistep voice
-  conversion.
-\newblock {\em in Proc. ICASSP}, 4:693--696, 2007.
-
-\bibitem{Ohta10}
-K.~Ohta, T.~Toda, Y.~Ohtani, H.~Saruwatari, and K.~Shikano.
-\newblock Adaptive voice-quality control based on one-to-many eigenvoice
-  conversion.
-\newblock {\em in Proc. Interspeech}, pages 2158--2161, 2010.
-
-\bibitem{Kominek08}
-J.~Kominek, T.~Schultz, and A.~W Black.
-\newblock Synthesizer voice quality of new languages calibrated with mean mel
-  cepstral distortion.
-\newblock {\em in Proc. the International Workshop on Spoken Language
-  Technology for Under-Resourced Languages (SLTU)}, 2008.
-
-\bibitem{Aihara15}
-R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Activity-mapping non-negative matrix factorization for exemplar-based
-  voice conversion.
-\newblock {\em in Proc. ICASSP}, pages 4899--4903, 2015.
-
-\bibitem{Ueda15}
-R.~Ueda, R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Individuality-preserving spectrum modification for articulation
-  disorders using phone selective synthesis.
-\newblock {\em in Proc. SLPAT}, 2015.
-
-\bibitem{Aihara16}
-R.~Aihara, T.~Takiguchi, and Y.~Ariki.
-\newblock Semi-non-negative matrix factorization using alternating direction
-  method of multipliers for voice conversion.
-\newblock {\em in Proc. ICASSP}, pages 5170--5174, 2016.
+\bibitem{joulin2017bag}
+Armand Joulin, Edouard Grave, and Piotr Bojanowski~Tomas Mikolov.
+\newblock Bag of tricks for efficient text classification.
+\newblock {\em EACL 2017}, page 427, 2017.
+
+\bibitem{yu2011linked}
+Liyang Yu.
+\newblock Linked open data.
+\newblock In {\em A Developer’s Guide to the Semantic Web}, pages 409--466.
+  Springer, 2011.
+
+\bibitem{navigli2012babelnet}
+Roberto Navigli and Simone~Paolo Ponzetto.
+\newblock Babelnet: The automatic construction, evaluation and application of a
+  wide-coverage multilingual semantic network.
+\newblock {\em Artificial Intelligence}, 193:217--250, 2012.
+
+\bibitem{getoor2007introduction}
+Lise Getoor and Ben Taskar.
+\newblock {\em Introduction to statistical relational learning}.
+\newblock MIT press, 2007.
+
+\bibitem{wang2017knowledge}
+Quan Wang, Zhendong Mao, Bin Wang, and Li~Guo.
+\newblock Knowledge graph embedding: A survey of approaches and applications.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  29(12):2724--2743, 2017.
+
+\bibitem{chamberlainneural}
+Benjamin~Paul Chamberlain, James~R Clough, and Marc~Peter Deisenroth.
+\newblock Neural embeddings of graphs in hyperbolic space.
+
+\bibitem{de2018representation}
+Christopher De~Sa, Albert Gu, Christopher R{\'e}, and Frederic Sala.
+\newblock Representation tradeoffs for hyperbolic embeddings.
+\newblock 2018.
+
+\bibitem{kadlec2017knowledge}
+Rudolf Kadlec, Ondrej Bajgar, and Jan Kleindienst.
+\newblock Knowledge base completion: Baselines strike back.
+\newblock In {\em Proceedings of the 2nd Workshop on Representation Learning
+  for NLP}, pages 69--74, 2017.
+
+\bibitem{yang2015embedding}
+Bishan Yang, Scott Wen-tau Yih, Xiaodong He, Jianfeng Gao, and Li~Deng.
+\newblock Embedding entities and relations for learning and inference in
+  knowledge bases.
+\newblock 2015.
+
+\bibitem{bordes2013translating}
+Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, and Oksana
+  Yakhnenko.
+\newblock Translating embeddings for modeling multi-relational data.
+\newblock In {\em Advances in neural information processing systems}, pages
+  2787--2795, 2013.
+
+\bibitem{dettmers2017convolutional}
+Tim Dettmers, Pasquale Minervini, Pontus Stenetorp, and Sebastian Riedel.
+\newblock Convolutional 2d knowledge graph embeddings.
+\newblock 2017.
+
+\bibitem{conneau2017supervised}
+Alexis Conneau, Douwe Kiela, Holger Schwenk, Lo{\"\i}c Barrault, and Antoine
+  Bordes.
+\newblock Supervised learning of universal sentence representations from
+  natural language inference data.
+\newblock In {\em Proceedings of the 2017 Conference on Empirical Methods in
+  Natural Language Processing}, pages 670--680, 2017.
+
+\bibitem{hill2015learning}
+Felix Hill, KyungHyun Cho, Anna Korhonen, and Yoshua Bengio.
+\newblock Learning to understand phrases by embedding the dictionary.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  4:17--30, 2016.
+
+\bibitem{kiros2015skip}
+Ryan Kiros, Yukun Zhu, Ruslan~R Salakhutdinov, Richard Zemel, Raquel Urtasun,
+  Antonio Torralba, and Sanja Fidler.
+\newblock Skip-thought vectors.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3294--3302, 2015.
+
+\bibitem{hill2016learning}
+Felix Hill, Kyunghyun Cho, and Anna Korhonen.
+\newblock Learning distributed representations of sentences from unlabelled
+  data.
+\newblock In {\em Proceedings of the 2016 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 1367--1377, 2016.
+
+\bibitem{le2014distributed}
+Quoc Le and Tomas Mikolov.
+\newblock Distributed representations of sentences and documents.
+\newblock In {\em International Conference on Machine Learning}, pages
+  1188--1196, 2014.
+
+\bibitem{pagliardini2017unsupervised}
+Matteo Pagliardini, Prakhar Gupta, and Martin Jaggi.
+\newblock Unsupervised learning of sentence embeddings using compositional
+  n-gram features.
+\newblock Technical report, 2017.
+
+\bibitem{dumais2004latent}
+Susan~T Dumais.
+\newblock Latent semantic analysis.
+\newblock {\em Annual review of information science and technology},
+  38(1):188--230, 2004.
+
+\bibitem{blei2003latent}
+David~M Blei, Andrew~Y Ng, and Michael~I Jordan.
+\newblock Latent dirichlet allocation.
+\newblock {\em Journal of machine Learning research}, 3(Jan):993--1022, 2003.
+
+\bibitem{nallapati2016abstractive}
+Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gulcehre, and Bing
+  Xiang.
+\newblock Abstractive text summarization using sequence-to-sequence rnns and
+  beyond.
+\newblock In {\em Proceedings of The 20th SIGNLL Conference on Computational
+  Natural Language Learning}, pages 280--290, 2016.
+
+\bibitem{chen2017reading}
+Danqi Chen, Adam Fisch, Jason Weston, and Antoine Bordes.
+\newblock Reading wikipedia to answer open-domain questions.
+\newblock In {\em Proceedings of the 55th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, volume~1, pages
+  1870--1879, 2017.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
 
 \end{thebibliography}
